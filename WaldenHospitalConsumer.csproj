@@ -130,6 +130,7 @@
     <Compile Include="Utilities\FrameNavigation.cs" />
     <Compile Include="Utilities\NotificationClass.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
+    <Compile Include="ViewModel\LandingPage.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MyProfileViewModel.cs" />
     <Compile Include="View\LoginView.xaml.cs">
