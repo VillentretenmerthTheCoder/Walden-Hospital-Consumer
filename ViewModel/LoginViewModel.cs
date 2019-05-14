@@ -63,7 +63,7 @@ namespace WaldenHospitalConsumer.ViewModel
                             {
                                
                                 
-                                  Type typeProfile = typeof(MyProfileView);
+                                  Type typeProfile = typeof(NewsView);
                                   FrameNavigation.ActivateFrameNavigation(typeProfile);
                                 break;
                             } 
