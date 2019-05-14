@@ -15,7 +15,7 @@ namespace WaldenHospitalConsumer.Model.Catalog
 {
    public class UserCatalog: IRequestHttpHandler<User>
     {
-        private const string Uri = "http://localhost:65394/api/patients";
+        private const string Uri = "http://localhost:65394/api/users";
 
         public ObservableCollection<User> Users { get; set; }
 
