@@ -123,6 +123,7 @@
     <Compile Include="CurrentEntities\CurrentUser.cs" />
     <Compile Include="Handler\IRequestHttpHandler.cs" />
     <Compile Include="Model\Appointment.cs" />
+    <Compile Include="Model\Catalog\PatientCatalog.cs" />
     <Compile Include="Model\Catalog\UserCatalog.cs" />
     <Compile Include="Model\Patient.cs" />
     <Compile Include="Model\User.cs" />
@@ -130,9 +131,10 @@
     <Compile Include="Utilities\FrameNavigation.cs" />
     <Compile Include="Utilities\NotificationClass.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
-    <Compile Include="ViewModel\LandingPage.cs" />
+    <Compile Include="ViewModel\AddPatientViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MyProfileViewModel.cs" />
+    <Compile Include="ViewModel\PatientListViewModel.cs" />
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>

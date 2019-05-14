@@ -10,21 +10,21 @@ using Windows.Web.Http;
 using Newtonsoft.Json;
 using WaldenHospitalConsumer.Utilities;
 
-
 namespace WaldenHospitalConsumer.Model.Catalog
 {
-   public class UserCatalog: IRequestHttpHandler<User>
+   public class PatientCatalog : IRequestHttpHandler<Patient>
     {
         private const string Uri = "http://localhost:65394/api/patients";
+        
 
-        public ObservableCollection<User> Users { get; set; }
+        public ObservableCollection<Patient> Patients { get; set; }
 
         public ViewModel.LoginViewModel UserCatalogVm { get; set; }
 
-        public UserCatalog()
+        public PatientCatalog()
         {
-            
-            Users = new ObservableCollection<User>();
+
+            Patients = new ObservableCollection<Patient>();
             FetchAllData();
         }
 
@@ -47,20 +47,20 @@ namespace WaldenHospitalConsumer.Model.Catalog
                     // convert Json into Objects
                     if (response != null)
                     {
-                        Users = JsonConvert.DeserializeObject<ObservableCollection<User>>(response);
+                        Patients = JsonConvert.DeserializeObject<ObservableCollection<Patient>>(response);
                         //call on property change interface.
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     var messageDialog = new MessageDialog(ex.Message);
                     await messageDialog.ShowAsync();
-                }                
+                }
             }
         }
 
 
-           public void Post()
+        public void Post()
         {
             throw new NotImplementedException();
         }

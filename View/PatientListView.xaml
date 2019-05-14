@@ -1,0 +1,78 @@
+﻿<Page
+    x:Class="WaldenHospitalConsumer.View.PatientListView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WaldenHospitalConsumer.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:WaldenHospitalConsumer.ViewModel"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.DataContext>
+            <ViewModel:PatientListViewModel/>
+        </Grid.DataContext>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Background="AntiqueWhite">
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="700"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Image  Margin="10" Grid.Column="0" Source="../Assets/icons8-edit-24.png" Width="24" />
+            <Button Grid.Column="1"  Content="News Page" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
+
+            <Image Margin="10" Grid.Column="2" Height="24" Source="../Assets/icons8-edit-24.png" Stretch="Fill" Width="24"/>
+            <Button Grid.Column="3" Content="Registration of Patient"  FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto" HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
+
+            <TextBlock Margin="10" Grid.Column="5" Text="[Name] is Logged in" FontSize="20" HorizontalAlignment="Right" Width="Auto" Height="Auto"  FontFamily="Rockwell Condensed" />
+            <Button Margin="10" Grid.Column="6" Content="Log out" FontSize="20" FontWeight="Black" Background="GreenYellow" Width="Auto" Height="Auto"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Rockwell Condensed" />
+
+
+        </Grid>
+        <StackPanel Grid.Row="1">
+
+            <TextBlock FontStyle="Oblique" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Search By" FontFamily="Bodoni MT" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="CPR-Number" />
+                    <TextBox FontSize="20" Margin="5"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" >
+                    <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="First Name" />
+                    <TextBox FontSize="20" Margin="5"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" >
+                    <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Last Name" />
+                    <TextBox FontSize="20" Margin="5"/>
+                </StackPanel>
+                <ListView Grid.Row="3" Grid.ColumnSpan="3" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="2" Width="auto" Height="300">
+                    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Blue"/>
+                </ListView>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>
