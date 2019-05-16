@@ -79,7 +79,7 @@
                     <TextBlock Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Female" FontSize="17"  Height="Auto" Width="Auto"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Grid.Row="0">
-                    <CheckBox  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="17" />
+                    <CheckBox  Margin="10" HorizontalAlignment="Center" SVerticalAlignment="Center"  FontSize="17" />
                     <CheckBox  Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17" Height="Auto" Width="Auto"   />
                 </StackPanel>
             </Grid>
