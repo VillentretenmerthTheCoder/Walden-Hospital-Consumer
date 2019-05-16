@@ -131,9 +131,7 @@
     <Compile Include="Utilities\FrameNavigation.cs" />
     <Compile Include="Utilities\NotificationClass.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
-    <Compile Include="ViewModel\AddPatientViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
-    <Compile Include="ViewModel\MyProfileViewModel.cs" />
     <Compile Include="ViewModel\NewsViewModel.cs" />
     <Compile Include="ViewModel\PatientListViewModel.cs" />
     <Compile Include="ViewModel\RegistrationViewModel.cs" />

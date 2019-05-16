@@ -59,17 +59,17 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel>
                     <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="CPR-Number" />
-                    <TextBox FontSize="20" Margin="5"/>
+                    <TextBox Text="{Binding _inputPatient.Cpr, Mode=TwoWay}" FontSize="20" Margin="5"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" >
                     <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="First Name" />
-                    <TextBox FontSize="20" Margin="5"/>
+                    <TextBox Text ="{Binding _inputPatient.User.Name, Mode=TwoWay}" FontSize="20" Margin="5"/>
                 </StackPanel>
                 <StackPanel Grid.Column="2" >
                     <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Last Name" />
-                    <TextBox FontSize="20" Margin="5"/>
+                    <TextBox Text="{Binding _inputPatient.User.Surname, Mode=TwoWay}" FontSize="20" Margin="5"/>
                 </StackPanel>
-                <ListView Grid.Row="3" Grid.ColumnSpan="3" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="2" Width="auto" Height="300">
+                <ListView  Grid.Row="3" Grid.ColumnSpan="3" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="2" Width="auto" Height="300">
                     <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Blue"/>
                 </ListView>
             </Grid>
