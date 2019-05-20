@@ -9,6 +9,7 @@ using Windows.UI.Popups;
 using Windows.Web.Http;
 using Newtonsoft.Json;
 using WaldenHospitalConsumer.Utilities;
+using WaldenHospitalConsumer.ViewModel;
 
 namespace WaldenHospitalConsumer.Model.Catalog
 {
@@ -19,13 +20,14 @@ namespace WaldenHospitalConsumer.Model.Catalog
 
         public ObservableCollection<Patient> Patients { get; set; }
 
-        public ViewModel.LoginViewModel UserCatalogVm { get; set; }
+        public RegistrationViewModel RegistrationViewModel { get; set; }
 
         public PatientCatalog()
         {
 
             Patients = new ObservableCollection<Patient>();
             FetchAllData();
+            RegistrationViewModel = new RegistrationViewModel();
         }
 
 
@@ -60,9 +62,23 @@ namespace WaldenHospitalConsumer.Model.Catalog
         }
 
 
-        public void Post()
+        public async void Post()
         {
-            throw new NotImplementedException();
+            Patient Patient = new Patient
+            {
+                Cpr = RegistrationViewModel.Patient.Cpr,
+                Name = RegistrationViewModel.Patient.Name,
+                LastName = RegistrationViewModel.Patient.LastName,
+                Gender = RegistrationViewModel.Patient.Gender,
+                BirthTime = RegistrationViewModel.Patient.BirthTime
+            };
+
+            try
+            {
+
+            }
+
+
         }
 
     }
