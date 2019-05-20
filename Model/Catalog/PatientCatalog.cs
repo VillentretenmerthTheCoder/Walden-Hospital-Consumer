@@ -61,25 +61,29 @@ namespace WaldenHospitalConsumer.Model.Catalog
             }
         }
 
-
-        public async void Post()
+        public void Post()
         {
-            Patient Patient = new Patient
-            {
-                Cpr = RegistrationViewModel.Patient.Cpr,
-                Name = RegistrationViewModel.Patient.Name,
-                LastName = RegistrationViewModel.Patient.LastName,
-                Gender = RegistrationViewModel.Patient.Gender,
-                BirthTime = RegistrationViewModel.Patient.BirthTime
-            };
-
-            try
-            {
-
-            }
-
-
+            throw new NotImplementedException();
         }
+
+        //public async void Post()
+        //{
+        //    Patient Patient = new Patient
+        //    {
+        //        Cpr = RegistrationViewModel.Patient.Cpr,
+        //        Name = RegistrationViewModel.Patient.Name,
+        //        LastName = RegistrationViewModel.Patient.LastName,
+        //        Gender = RegistrationViewModel.Patient.Gender,
+        //        BirthTime = RegistrationViewModel.Patient.BirthTime
+        //    };
+
+        //    try
+        //    {
+
+        //    }
+
+
+        //}
 
     }
 }

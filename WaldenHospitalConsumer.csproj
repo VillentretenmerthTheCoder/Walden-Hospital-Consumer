@@ -131,10 +131,14 @@
     <Compile Include="Utilities\FrameNavigation.cs" />
     <Compile Include="Utilities\NotificationClass.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
+    <Compile Include="ViewModel\AppointmentBookingViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\NewsViewModel.cs" />
     <Compile Include="ViewModel\PatientListViewModel.cs" />
     <Compile Include="ViewModel\RegistrationViewModel.cs" />
+    <Compile Include="View\AppointmentBookingView.xaml.cs">
+      <DependentUpon>AppointmentBookingView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -158,6 +162,11 @@
     <None Include="WaldenHospitalConsumer_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\icons8-edit-24.png" />
+    <Content Include="Assets\icons8-lock-24.png" />
+    <Content Include="Assets\icons8-news-24.png" />
+    <Content Include="Assets\icons8-plus-24.png" />
+    <Content Include="Assets\icons8-search-24.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -182,6 +191,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\AppointmentBookingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
