@@ -12,11 +12,15 @@ namespace WaldenHospitalConsumer.Model
         public int Cpr { get; set; }
 
         
-        public string Gender { get; set; }
+        public int Gender { get; set; }
 
        
         public DateTime? BirthTime { get; set; }
 
-        public User User { get; set; }
+        public string Name { get; set; }
+        
+        public string LastName { get; set; }
+
+        
     }
 }

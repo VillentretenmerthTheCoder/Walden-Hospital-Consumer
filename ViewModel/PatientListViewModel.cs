@@ -57,12 +57,12 @@ namespace WaldenHospitalConsumer.ViewModel
                     _ReturnedList.Add(_patient);
                 }
                 else
-                if (Convert.ToString(_patient.User.Name) == Search)
+                if (Convert.ToString(_patient.Name) == Search)
                 {
                     _ReturnedList.Add(_patient);
                 }
                 else
-                if(Convert.ToString(_patient.User.Surname) == Search)
+                if(Convert.ToString(_patient.LastName) == Search)
                 {
                     _ReturnedList.Add(_patient);
                 }

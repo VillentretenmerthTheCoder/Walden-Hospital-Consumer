@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WaldenHospitalConsumer.Utilities;
 
 namespace WaldenHospitalConsumer.ViewModel
 {
-    class AppointmentBookingViewModel : NotificationClass
+    class AppointmentBookingViewModel
     {
     }
 }

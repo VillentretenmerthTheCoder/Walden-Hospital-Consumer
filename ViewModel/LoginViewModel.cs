@@ -11,7 +11,6 @@ namespace WaldenHospitalConsumer.ViewModel
     {
         private int _cpr;
         private string _password;
-        private User CurrentUser;
         private bool _allowLogin = false;
 
         public IObservable<User> Users { get; set; }
