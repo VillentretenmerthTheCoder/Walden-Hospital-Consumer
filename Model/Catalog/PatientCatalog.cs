@@ -62,10 +62,7 @@ namespace WaldenHospitalConsumer.Model.Catalog
             }
         }
 
-        //public void Post()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        
 
         public async void Post()
         {
