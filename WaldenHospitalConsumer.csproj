@@ -119,8 +119,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CurrentEntities\CurrentPatient.cs" />
-    <Compile Include="CurrentEntities\CurrentUser.cs" />
+    <Compile Include="CurrentEntities\CurrentState.cs" />
     <Compile Include="Handler\IRequestHttpHandler.cs" />
     <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\Catalog\PatientCatalog.cs" />
@@ -148,6 +147,9 @@
     <Compile Include="View\NewsView.xaml.cs">
       <DependentUpon>NewsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PatientInfoView.xaml.cs">
+      <DependentUpon>PatientInfoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PatientListView.xaml.cs">
       <DependentUpon>PatientListView.xaml</DependentUpon>
     </Compile>
@@ -167,6 +169,7 @@
     <Content Include="Assets\icons8-news-24.png" />
     <Content Include="Assets\icons8-plus-24.png" />
     <Content Include="Assets\icons8-search-24.png" />
+    <Content Include="Assets\icons8-undo-24.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -204,6 +207,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NewsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PatientInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

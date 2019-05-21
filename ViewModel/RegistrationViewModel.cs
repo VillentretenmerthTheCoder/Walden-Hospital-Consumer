@@ -7,6 +7,7 @@ using WaldenHospitalConsumer.Utilities;
 using WaldenHospitalConsumer.View;
 using WaldenHospitalConsumer.Model;
 using WaldenHospitalConsumer.Model.Catalog;
+using WaldenHospitalConsumer.CurrentEntities;
 
 namespace WaldenHospitalConsumer.ViewModel
 {
@@ -18,11 +19,12 @@ namespace WaldenHospitalConsumer.ViewModel
             DoLogOut = new RelayCommand(LogOut);
             DoShowListOfPatients = new RelayCommand(ShowListOfPatient);
             DoShowNewsView = new RelayCommand(ShowNewsView);
-            DoIsCheckedMale = new RelayCommand(IsCheckedMale);
-            DoIsCheckedFemale = new RelayCommand(IsCheckedFemale);
+            //DoIsCheckedMale = new RelayCommand(IsCheckedMale);
+            //DoIsCheckedFemale = new RelayCommand(IsCheckedFemale);
             DoRegister = new RelayCommand(Register);
             Patient = new Patient();
-           
+            Patient = CurrentState.CurrentPatient;
+
         }
 
 
@@ -31,25 +33,17 @@ namespace WaldenHospitalConsumer.ViewModel
         public Patient Patient { get; set; }
 
 
-        public void IsCheckedMale(object s)
-        {
-            Patient.Gender = 1;
-        }
-        public void IsCheckedFemale(object s)
-        {
-            Patient.Gender = 0;
-        }
+        
 
         public  void Register(object s)
         {
             PatientCatalog PatientCatalog = new PatientCatalog();
             PatientCatalog.Post();
         }
+
+
+
         public RelayCommand DoRegister { get; set; }
-
-
-
-
         public RelayCommand DoIsCheckedMale { get; set; }
         public RelayCommand DoIsCheckedFemale { get; set; }
         public RelayCommand DoLogOut { get; set; }

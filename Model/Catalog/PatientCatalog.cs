@@ -69,11 +69,11 @@ namespace WaldenHospitalConsumer.Model.Catalog
             RegistrationViewModel RegistrationViewModel = new RegistrationViewModel();
             Patient Patient = new Patient
             {
-                Cpr = RegistrationViewModel.Patient.Cpr,
-                Name = RegistrationViewModel.Patient.Name,
-                LastName = RegistrationViewModel.Patient.LastName,
-                Gender = RegistrationViewModel.Patient.Gender,
-                BirthTime = RegistrationViewModel.Patient.BirthTime
+                Cpr = CurrentEntities.CurrentState.CurrentPatient.Cpr,
+                Name = CurrentEntities.CurrentState.CurrentPatient.Name,
+                LastName = CurrentEntities.CurrentState.CurrentPatient.LastName,
+                Gender = CurrentEntities.CurrentState.CurrentPatient.Gender,
+                BirthTime = CurrentEntities.CurrentState.CurrentPatient.BirthTime
             };
 
             try
