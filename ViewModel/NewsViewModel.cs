@@ -22,7 +22,7 @@ namespace WaldenHospitalConsumer.ViewModel
        public  RelayCommand DoShowListOfPatients { get; set; }
        public  RelayCommand DoShowRegistrationPage { get; set; }
 
-        public void LogOut(object s)
+        public void LogOut(object s) 
         {
             Type type = typeof(LoginView);
             FrameNavigation.ActivateFrameNavigation(type);
