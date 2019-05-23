@@ -20,12 +20,13 @@ namespace WaldenHospitalConsumer.Model.Catalog
 
 
         public ObservableCollection<Patient> Patients { get; set; }
-       
+        public Patient Patient { get; set; }
 
+       
 
         public PatientCatalog()
         {
-
+            Patient = new Patient();
             Patients = new ObservableCollection<Patient>();
             FetchAllData();
             
@@ -66,25 +67,24 @@ namespace WaldenHospitalConsumer.Model.Catalog
 
         public async void Post()
         {
-            RegistrationViewModel RegistrationViewModel = new RegistrationViewModel();
-            Patient Patient = new Patient
+            
+            Patient Patient12 = new Patient
             {
-                Cpr = CurrentEntities.CurrentState.CurrentPatient.Cpr,
-                Name = CurrentEntities.CurrentState.CurrentPatient.Name,
-                LastName = CurrentEntities.CurrentState.CurrentPatient.LastName,
-                Gender = CurrentEntities.CurrentState.CurrentPatient.Gender,
-                BirthTime = CurrentEntities.CurrentState.CurrentPatient.BirthTime
+                Cpr = Patient.Cpr,
+                Name = Patient.Name,
+                LastName = Patient.LastName,
+                Gender = Patient.Gender,
+                BirthTime = Patient.BirthTime
             };
 
-            try
-            {
+            
                 using (var client = new HttpClient())
                 {
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(new HttpMediaTypeWithQualityHeaderValue("application/json"));
                     //We need to convert new object firstly into json format and then into json string form.
-                    var jsonStr = JsonConvert.SerializeObject(Patient);
-                    var content = new HttpStringContent(jsonStr, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application,json");
+                    var jsonStr = JsonConvert.SerializeObject(Patient12);
+                    var content = new HttpStringContent(jsonStr, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json");
                     HttpResponseMessage response = null;
                     Task task = Task.Run(async () =>
                     {
@@ -115,13 +115,15 @@ namespace WaldenHospitalConsumer.Model.Catalog
                         }
                     }
                 }
-            }
-            catch(Exception ex)
-            {
-                var messageDialog = new MessageDialog(ex.InnerException.Message);
-                await messageDialog.ShowAsync();
-            }
+            
+           
+           
 
+        }
+
+        public void GetData(Patient pat)
+        {
+            Patient = pat;
         }
     }
 }

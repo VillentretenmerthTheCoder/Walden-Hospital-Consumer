@@ -14,16 +14,16 @@ namespace WaldenHospitalConsumer.ViewModel
         PatientCatalog PatientCatalog = new PatientCatalog();
         private ObservableCollection<Patient> _patients;
         private string _search;
+       
 
-        
 
         public ObservableCollection<Patient> Patients
         {
             get => _patients;
             set
             {
-                _patients = PatientCatalog.Patients;
-                OnPropertyChanged("Patients");
+                _patients = value;
+                OnPropertyChanged(nameof(Patients));
             }
         }
 
@@ -35,53 +35,41 @@ namespace WaldenHospitalConsumer.ViewModel
                 if(Search != value)
                 {
                     _search = value;
-                    UpdateSearch();
                 }
             }
         }
 
         public RelayCommand SelectItemCommand { get; set; }
 
-        private void UpdateSearch()
+        public void Searching(object s)
         {
-            Patients = Find(Search);
+            Find(Search);
         }
+        public RelayCommand DoSearching { get; set; }
 
-        private ObservableCollection<Patient> Find(string Search)
+
+
+
+        private void Find(string Search)
         {
             PatientCatalog PatientCatalog = new PatientCatalog();
             ObservableCollection<Patient> _ReturnedList = new ObservableCollection<Patient>();
-            foreach(Patient _patient in PatientCatalog.Patients)
+            foreach (Patient _patient in PatientCatalog.Patients)
             {
-                if(Convert.ToString(_patient.Cpr) == Search )
+                if (_patient.Name == Search || _patient.LastName == Search)
                 {
-                    _ReturnedList.Add(_patient);
+                    Patients.Clear();
+                    Patients.Add(_patient);
                 }
                 else
-                if (Convert.ToString(_patient.Name) == Search)
                 {
-                    _ReturnedList.Add(_patient);
+                    Patients = PatientCatalog.Patients;
                 }
-                else
-                if(Convert.ToString(_patient.LastName) == Search)
-                {
-                    _ReturnedList.Add(_patient);
-                }
-            }
-            if (_ReturnedList == null)
-            {
-                return PatientCatalog.Patients;
-            }
-            else
-            {
-                return _ReturnedList;
+
+
             }
         }
-        
-        //private void SelectItem(object s)
-        //{
-
-        //}
+     
         
         
         
@@ -94,7 +82,7 @@ namespace WaldenHospitalConsumer.ViewModel
             DoShowNewsView = new RelayCommand(ShowListOfPatient);
             DoShowRegistrationPage = new RelayCommand(ShowRegistrationPage);
             //Searching
-
+            DoSearching = new RelayCommand(Searching);
 
           
         }

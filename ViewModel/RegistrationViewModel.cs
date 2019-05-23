@@ -26,7 +26,9 @@ namespace WaldenHospitalConsumer.ViewModel
 
         public  void Register(object s)
         {
+            
             PatientCatalog PatientCatalog = new PatientCatalog();
+            PatientCatalog.GetData(Patient);
             PatientCatalog.Post();
         }
 
@@ -40,7 +42,7 @@ namespace WaldenHospitalConsumer.ViewModel
             //DoIsCheckedFemale = new RelayCommand(IsCheckedFemale);
             DoRegister = new RelayCommand(Register);
             Patient = new Patient();
-            Patient = CurrentState.CurrentPatient;
+            //Patient = CurrentState.CurrentPatient;
 
         }
 

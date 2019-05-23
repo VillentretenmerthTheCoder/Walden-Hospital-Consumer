@@ -48,7 +48,7 @@
 
         <StackPanel Grid.Row="1">
 
-            <TextBlock FontStyle="Oblique" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Search By" FontFamily="Bodoni MT" />
+            <TextBlock FontStyle="Oblique" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Search" FontFamily="Bodoni MT" />
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -60,22 +60,38 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <StackPanel>
-                    <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="CPR-Number" />
-                    <TextBox Text="{Binding Patient.Cpr, Mode=TwoWay}" FontSize="20" Margin="5"/>
-                </StackPanel>
-                <StackPanel Grid.Column="1" >
-                    <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="First Name" />
-                    <TextBox Text="{Binding Patient.Name, Mode=TwoWay}" FontSize="20" Margin="5"/>
-                </StackPanel>
-                <StackPanel Grid.Column="2" >
-                    <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Last Name" />
-                    <TextBox Text="{Binding Patient.LastName, Mode=TwoWay}" FontSize="20" Margin="5"/>
-                </StackPanel>
+                <StackPanel/>
+                <StackPanel Grid.Column="1" />
+                <StackPanel Grid.Column="2" />
             </Grid>
-            <ListView ItemsSource="{Binding Patients}">
-            
+            <ListView ItemsSource="{Binding Patients}" Height="402">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Background="LightGray" Height="100" Width="100">
+                                    <TextBlock Text="{Binding Cpr}" FontSize="20" Foreground="Green"/>
+                                </Border>
+                                <Border Background="LightGray" Height="100" Width="150">
+                                    <TextBlock Text="{Binding Name}" FontSize="20" Foreground="Green"/>
+                                </Border>
+                                <Border Background="LightGray" Height="100" Width="150">
+                                    <TextBlock Text="{Binding LastName}" FontSize="20" Foreground="Green"/>
+                                </Border>
+                                <Border Background="LightGray" Height="100" Width="100">
+                                    <TextBlock Text="{Binding BirthTime}" FontSize="20" Foreground="Green"/>
+                                </Border>
+                                <Border Background="LightGray" Height="100" Width="100">
+                                    <TextBlock Text="{Binding Gender}" FontSize="20" Foreground="Green"/>
+                                </Border>
+                            </StackPanel>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
-    </StackPanel>
+            <TextBox Text="{Binding Search}" Width="528"/>
+            <Button Command="{Binding DoSearching}" Content="Search" Height="55" Width="219"/>
+        </StackPanel>
     </Grid>
 </Page>
