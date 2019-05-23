@@ -17,6 +17,8 @@ namespace WaldenHospitalConsumer.Model
        
         public DateTime? AppointmentDate { get; set; }
 
+        public DateTime? AppointmentTime { get; set; }
+
         public virtual User User { get; set; }
     }
 }

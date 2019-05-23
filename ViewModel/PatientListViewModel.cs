@@ -83,7 +83,7 @@ namespace WaldenHospitalConsumer.ViewModel
             DoShowRegistrationPage = new RelayCommand(ShowRegistrationPage);
             //Searching
             DoSearching = new RelayCommand(Searching);
-
+            DoShowPatientInfo = new RelayCommand(ShowPatientInfo);
           
         }
 
@@ -94,7 +94,7 @@ namespace WaldenHospitalConsumer.ViewModel
         public RelayCommand DoLogOut { get; set; }
         public RelayCommand DoShowNewsView { get; set; }
         public RelayCommand DoShowRegistrationPage { get; set; }
-
+        public RelayCommand DoShowPatientInfo { get; set; }
         //MovingMethods
         public void LogOut(object s)
         {
@@ -114,6 +114,10 @@ namespace WaldenHospitalConsumer.ViewModel
             FrameNavigation.ActivateFrameNavigation(type);
         }
 
-
+        public void ShowPatientInfo(object s)
+        {
+            Type type = typeof(PatientInfoView);
+            FrameNavigation.ActivateFrameNavigation(type);
+        }
     }
 }

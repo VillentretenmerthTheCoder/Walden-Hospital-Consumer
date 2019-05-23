@@ -13,7 +13,7 @@ namespace WaldenHospitalConsumer.ViewModel
 {
    public class RegistrationViewModel
     {
-        //Constructor
+     
        
 
 

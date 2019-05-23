@@ -122,6 +122,7 @@
     <Compile Include="CurrentEntities\CurrentState.cs" />
     <Compile Include="Handler\IRequestHttpHandler.cs" />
     <Compile Include="Model\Appointment.cs" />
+    <Compile Include="Model\Catalog\AppointmentCatalog.cs" />
     <Compile Include="Model\Catalog\PatientCatalog.cs" />
     <Compile Include="Model\Catalog\UserCatalog.cs" />
     <Compile Include="Model\Patient.cs" />

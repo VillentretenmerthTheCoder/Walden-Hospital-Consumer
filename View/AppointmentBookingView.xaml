@@ -57,19 +57,19 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock HorizontalAlignment="Center" Text="Date" FontSize="20"  Width="112" Height="Auto" Margin="0,10,0,10" />
-                <DatePicker DataContext="{Binding Date, Mode=TwoWay}" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" Height="36" VerticalAlignment="Top" Width="603" Margin="0,10,0,0"/>
+                <DatePicker DataContext="{Binding Appointment.AppointmentDate , Mode=TwoWay}" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" Height="36" VerticalAlignment="Top" Width="603" Margin="0,10,0,0"/>
 
                 <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="Time" FontSize="20"  Width="112" Height="Auto" Margin="0,10,0,10" />
-                <TimePicker DataContext="{Binding Time, Mode=TwoWay}" Grid.Column="1"  Grid.Row="1" FontSize="17" HorizontalAlignment="Center" Height="36" VerticalAlignment="Top" Width="603" Margin="0,10,0,0"/>
-
+                <TimePicker DataContext="{Binding Appointment.AppointmentTime , Mode=TwoWay}" Grid.Column="1"  Grid.Row="1" FontSize="17" HorizontalAlignment="Center" Height="36" VerticalAlignment="Top" Width="603" Margin="0,10,0,0"/>
+   
                 <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Text="Issue" FontSize="20" Margin="10" Width="Auto" VerticalAlignment="Stretch"/>
-                <TextBox  Text="{Binding Issue, Mode=TwoWay}" Grid.Row="2" VerticalAlignment="Top"  FontSize="17" Margin="9.8,10,-353.8,0" Height="108" Grid.Column="1"/>
+                <TextBox  Text="{Binding Appointment.Description, Mode=TwoWay}" Grid.Row="2" VerticalAlignment="Top"  FontSize="17" Margin="9.8,10,-353.8,0" Height="108" Grid.Column="1"/>
 
             </Grid>
             <Grid>
                 <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center">
 
-                    <Button Content="Create" FontSize="40" BorderBrush="Black" BorderThickness="2" Background="GreenYellow" />
+                    <Button Command="{Binding DoBooking}" Content="Create" FontSize="40" BorderBrush="Black" BorderThickness="2" Background="GreenYellow" />
                 </StackPanel>
 
                 <Button Height="Auto" Width="Auto" HorizontalAlignment="Right" Content="Help" FontSize="25" BorderBrush="Black" BorderThickness="1" Background="GreenYellow" Margin="0,0,10,0"/>
