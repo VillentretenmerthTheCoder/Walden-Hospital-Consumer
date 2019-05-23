@@ -84,7 +84,7 @@ namespace WaldenHospitalConsumer.ViewModel
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

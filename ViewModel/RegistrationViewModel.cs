@@ -14,18 +14,7 @@ namespace WaldenHospitalConsumer.ViewModel
    public class RegistrationViewModel
     {
         //Constructor
-        public RegistrationViewModel()
-        {
-            DoLogOut = new RelayCommand(LogOut);
-            DoShowListOfPatients = new RelayCommand(ShowListOfPatient);
-            DoShowNewsView = new RelayCommand(ShowNewsView);
-            //DoIsCheckedMale = new RelayCommand(IsCheckedMale);
-            //DoIsCheckedFemale = new RelayCommand(IsCheckedFemale);
-            DoRegister = new RelayCommand(Register);
-            Patient = new Patient();
-            Patient = CurrentState.CurrentPatient;
-
-        }
+       
 
 
 
@@ -42,6 +31,18 @@ namespace WaldenHospitalConsumer.ViewModel
         }
 
 
+        public RegistrationViewModel()
+        {
+            DoLogOut = new RelayCommand(LogOut);
+            DoShowListOfPatients = new RelayCommand(ShowListOfPatient);
+            DoShowNewsView = new RelayCommand(ShowNewsView);
+            //DoIsCheckedMale = new RelayCommand(IsCheckedMale);
+            //DoIsCheckedFemale = new RelayCommand(IsCheckedFemale);
+            DoRegister = new RelayCommand(Register);
+            Patient = new Patient();
+            Patient = CurrentState.CurrentPatient;
+
+        }
 
         public RelayCommand DoRegister { get; set; }
         public RelayCommand DoIsCheckedMale { get; set; }

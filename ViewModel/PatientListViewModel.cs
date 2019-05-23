@@ -22,7 +22,7 @@ namespace WaldenHospitalConsumer.ViewModel
             get => _patients;
             set
             {
-                _patients = value;
+                _patients = PatientCatalog.Patients;
                 OnPropertyChanged("Patients");
             }
         }
@@ -49,6 +49,7 @@ namespace WaldenHospitalConsumer.ViewModel
 
         private ObservableCollection<Patient> Find(string Search)
         {
+            PatientCatalog PatientCatalog = new PatientCatalog();
             ObservableCollection<Patient> _ReturnedList = new ObservableCollection<Patient>();
             foreach(Patient _patient in PatientCatalog.Patients)
             {

@@ -11,6 +11,7 @@
 
 
     <Grid>
+
         <Grid.DataContext>
             <ViewModel:PatientListViewModel/>
         </Grid.DataContext>
@@ -71,10 +72,10 @@
                     <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Last Name" />
                     <TextBox Text="{Binding Patient.LastName, Mode=TwoWay}" FontSize="20" Margin="5"/>
                 </StackPanel>
-                <ListView Grid.Row="3" Grid.ColumnSpan="3" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="2" Width="auto" Height="300">
-                    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Blue"/>
-                </ListView>
             </Grid>
-        </StackPanel>
+            <ListView ItemsSource="{Binding Patients}">
+            
+            </ListView>
+    </StackPanel>
     </Grid>
 </Page>
