@@ -5,38 +5,43 @@
     xmlns:local="using:WaldenHospitalConsumer.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:WaldenHospitalConsumer.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
 
 
     <Grid>
+        <Grid.DataContext>
+            <ViewModel:PatientInfoViewModel/>
+        </Grid.DataContext>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid Background="AntiqueWhite" Grid.ColumnSpan="4">
+        <Grid Grid.Row="0" Background="AntiqueWhite">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1340"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
+            <Image Grid.Column="4" Source="../Assets/icons8-undo-24.png" Width="24" />
+            <Button Margin="0,0,0,0" Grid.Column="7" Content="Back to List" Command="{Binding DoShowPatientInfo}" FontSize="20" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Rockwell Condensed" />
 
-            <TextBlock Margin="10" Grid.Column="0" Text="[Name] is Logged in" FontSize="20" HorizontalAlignment="Right" Width="Auto" Height="Auto"  FontFamily="Rockwell Condensed" />
-            <Image  Margin="900,0,0,0" Grid.Column="6" Source="../Assets/icons8-undo-24.png" Width="24" />
-            <Button Margin="1100,0,0,0" Grid.Column="1" Content="Back to List" FontSize="20" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Rockwell Condensed" />
         </Grid>
-        <Grid Grid.ColumnSpan="4"/>
-        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Margin="0,0,0,0" Text="First Name" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" Text="{Binding FirstName, Mode=TwoWay}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+        <Button  Width="Auto" Height="Auto" Grid.Row="2" Content="Appointment" VerticalAlignment="Top" Command="{Binding ShowBookingView}" Margin="608,219.667,0,0"/>
+        <TextBox Text="{Binding Patient.Cpr, Mode=TwoWay}" HorizontalAlignment="Left" Margin="222,45.667,0,0" Grid.Row="2" VerticalAlignment="Top" Height="51" Width="175"/>
+        <TextBox HorizontalAlignment="Left" Margin="397,45.667,0,0" Grid.Row="2" Text="{Binding Patient.Name, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
+        <TextBox HorizontalAlignment="Left" Margin="572,45.667,0,0" Grid.Row="2" Text="{Binding Patient.LastName, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
+        <TextBox HorizontalAlignment="Left" Margin="747,45.667,0,0" Grid.Row="2" Text="{Binding Patient.BirthTime, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
+        <TextBox HorizontalAlignment="Left" Margin="923,45.667,0,0" Grid.Row="2" Text="{Binding Patient.Gender, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
     </Grid>
-
-
 </Page>

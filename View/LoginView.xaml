@@ -31,7 +31,7 @@
                          Text="{Binding Cpr, Mode=TwoWay}"
                          FontSize="32" 
                          Width="400" 
-                         Background="AntiqueWhite" />
+                         Background="AntiqueWhite"  />
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="0,10,0,0" HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

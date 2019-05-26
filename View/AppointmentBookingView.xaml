@@ -61,16 +61,14 @@
 
                 <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="Time" FontSize="20"  Width="112" Height="Auto" Margin="0,10,0,10" />
                 <TimePicker DataContext="{Binding Appointment.AppointmentTime , Mode=TwoWay}" Grid.Column="1"  Grid.Row="1" FontSize="17" HorizontalAlignment="Center" Height="36" VerticalAlignment="Top" Width="603" Margin="0,10,0,0"/>
-   
+
                 <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" Text="Issue" FontSize="20" Margin="10" Width="Auto" VerticalAlignment="Stretch"/>
                 <TextBox  Text="{Binding Appointment.Description, Mode=TwoWay}" Grid.Row="2" VerticalAlignment="Top"  FontSize="17" Margin="9.8,10,-353.8,0" Height="108" Grid.Column="1"/>
+                <Button Command="{Binding DoBooking}" Content="Create" FontSize="40" BorderBrush="Black" BorderThickness="2" Background="GreenYellow" Grid.Column="1" Margin="531.667,147,0,0" Grid.Row="2" VerticalAlignment="Top" />
 
             </Grid>
             <Grid>
-                <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center">
-
-                    <Button Command="{Binding DoBooking}" Content="Create" FontSize="40" BorderBrush="Black" BorderThickness="2" Background="GreenYellow" />
-                </StackPanel>
+                <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                 <Button Height="Auto" Width="Auto" HorizontalAlignment="Right" Content="Help" FontSize="25" BorderBrush="Black" BorderThickness="1" Background="GreenYellow" Margin="0,0,10,0"/>
             </Grid>

@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WaldenHospitalConsumer.Utilities;
 
 namespace WaldenHospitalConsumer.Model
 {
-    public class User
+    public class User: NotificationClass
     {
-       
-        public int Cpr { get; set; }
+
+        private string _cpr;
+        public string Cpr
+        {
+            get { return _cpr; }
+            set { _cpr = value;
+                OnPropertyChanged(nameof(Cpr)); 
+            }
+        }
 
         
         public string Name { get; set; }

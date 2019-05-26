@@ -8,14 +8,14 @@ namespace WaldenHospitalConsumer.Model
 {
     public class Patient : NotificationClass
     {
-        private int _cpr;
+        private string _cpr;
         private int _gender;
         private DateTime? _birthtime;
         private string _name;
         private string _lastname;
 
 
-        public int Cpr
+        public string Cpr
         {
             get { return _cpr; }
             set { _cpr = value;

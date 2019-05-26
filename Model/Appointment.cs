@@ -9,7 +9,7 @@ namespace WaldenHospitalConsumer.Model
   public class Appointment
     {
         
-        public int Cpr { get; set; }
+        public string Cpr { get; set; }
 
        
         public string Description { get; set; }

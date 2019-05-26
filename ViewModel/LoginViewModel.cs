@@ -9,7 +9,7 @@ namespace WaldenHospitalConsumer.ViewModel
 {
     public class LoginViewModel: NotificationClass
     {
-        private int _cpr;
+        private string _cpr;
         private string _password;
         private bool _allowLogin = false;
 
@@ -21,7 +21,7 @@ namespace WaldenHospitalConsumer.ViewModel
             get { return _allowLogin; }
             set { _allowLogin = value; }
         }
-        public int Cpr
+        public string Cpr
         {
             get { return _cpr; }
             set { _cpr = value; }
@@ -56,7 +56,7 @@ namespace WaldenHospitalConsumer.ViewModel
                     foreach(var user in UserCatalog.Users)
                     {
                      
-                        if(user.Cpr == Cpr)
+                        if(user.Cpr.Trim() == Cpr)
                         {
                             if(user.Password.Trim() == Password)
                             {

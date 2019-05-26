@@ -5,11 +5,13 @@
     xmlns:local="using:WaldenHospitalConsumer.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-   xmlns:ViewModel="using:WaldenHospitalConsumer.ViewModel"
+    xmlns:ViewModel="using:WaldenHospitalConsumer.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+
     <Grid>
+
         <Grid.DataContext>
             <ViewModel:NewsViewModel/>
         </Grid.DataContext>
@@ -27,7 +29,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="700"/>
+                <ColumnDefinition Width="780"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -35,36 +37,62 @@
             <Image  Margin="10" Grid.Column="0" Source="../Assets/icons8-edit-24.png" Width="24" />
             <Button Command ="{Binding DoShowRegistrationPage}" Grid.Column="1"  Content="Registration" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
 
-            <Image Margin="20,10,10,10" Grid.Column="2" Height="24" Source="../Assets/icons8-search-24.png" Stretch="Fill" Width="24" RenderTransformOrigin="0.492,0.475"/>
-            <Button Command ="{Binding DoShowListOfPatients}" Grid.Column="3" Content="List Of Patients"  FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto" HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
+            <Image Margin="20,10,10,10" Grid.Column="2" Height="24" Source="../Assets/icons8-news-24.png" Stretch="Fill" Width="24" RenderTransformOrigin="0.492,0.475"/>
+            <Button Command ="{Binding DoShowListOfPatients}" Grid.Column="3" Content="News"  FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto" HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
 
             <TextBlock Margin="10" Grid.Column="5" Text="[Name] is Logged in" FontSize="20" HorizontalAlignment="Right" Width="Auto" Height="Auto"  FontFamily="Rockwell Condensed" />
 
             <Image  Margin="20,10,5,10" Grid.Column="6" Source="../Assets/icons8-undo-24.png" Width="24" />
             <Button Command="{Binding DoLogOut}" Margin="10" Grid.Column="7" Content="Log out" FontSize="20" FontWeight="Black" Background="GreenYellow" Width="Auto" Height="Auto"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Rockwell Condensed" />
         </Grid>
+
         <StackPanel Grid.Row="1">
 
-            <TextBlock FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Text="News" FontFamily="Rockwell Condensed" />
+            <TextBlock FontStyle="Oblique" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Search" FontFamily="Bodoni MT" />
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <StackPanel>
-                    <TextBlock FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Local News" FontFamily="Rockwell Condensed" />
-                </StackPanel>
-
-                <TextBlock Grid.Column="1" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Global News" FontFamily="Rockwell Condensed" />
-                <ListView Grid.Row="3" Grid.ColumnSpan="3" Background="AntiqueWhite" BorderBrush="Black" BorderThickness="2" Width="auto" Height="300">
-                    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Blue"/>
-                </ListView>
-
+                <StackPanel/>
+                <StackPanel Grid.Column="1" />
+                <StackPanel Grid.Column="2" />
             </Grid>
+            <StackPanel Orientation="Horizontal" Height="195" >
+                <Button Command="{Binding DoSearching}" Content="Search" Height="55" Width="213"/>
+                <TextBox Text="{Binding Search, Mode=TwoWay}" Width="530" Height="69" Margin="250,0,0,0" />
+            </StackPanel>
+            <ListView ItemsSource="{Binding Appointments}" Height="402">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Background="LightGray" Height="100" Width="100">
+                                    <TextBlock  Text="{Binding Cpr}" FontSize="12" Foreground="Green"/>
+                                </Border>
+                                <Border Background="LightGray" Height="100" Width="150">
+                                    <TextBlock Text="{Binding AppointmentDate}" FontSize="12" Foreground="Green"/>
+                                </Border>
+                                <Border Background="LightGray" Height="100" Width="150">
+                                    <TextBlock Text="{Binding AppointmentTime}" FontSize="12" Foreground="Green"/>
+                                </Border>
+                                <Border Background="LightGray" Height="100" Width="100">
+                                    <TextBlock Text="{Binding Description}" FontSize="12" Foreground="Green"/>
+                                </Border>
+                               
+                            </StackPanel>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
         </StackPanel>
     </Grid>
 </Page>

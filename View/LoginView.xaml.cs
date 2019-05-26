@@ -30,6 +30,7 @@ namespace WaldenHospitalConsumer.View
             //_loginviewmodel = new LoginViewModel();
             //DataContext = _loginviewmodel;
         }
+
        
     }
 }

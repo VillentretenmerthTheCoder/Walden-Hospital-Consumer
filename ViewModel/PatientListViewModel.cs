@@ -11,9 +11,9 @@ namespace WaldenHospitalConsumer.ViewModel
 {
     class PatientListViewModel: NotificationClass
     {
-        PatientCatalog PatientCatalog = new PatientCatalog();
+        
         private ObservableCollection<Patient> _patients;
-        private string _search;
+        private string _search = "";
        
 
 
@@ -32,42 +32,56 @@ namespace WaldenHospitalConsumer.ViewModel
             get => _search;
             set
             {
-                if(Search != value)
-                {
+                
+                
                     _search = value;
-                }
+                    OnPropertyChanged(nameof(Search));
+                
             }
         }
 
-        public RelayCommand SelectItemCommand { get; set; }
 
-        public void Searching(object s)
+        private Patient _selectedPatient;
+        public Patient SelectedPatient
         {
-            Find(Search);
+            get { return _selectedPatient; }
+            set
+            {
+                _selectedPatient = value;
+                OnPropertyChanged(nameof(SelectedPatient));
+            }
         }
+        
+
+        
         public RelayCommand DoSearching { get; set; }
 
 
 
 
-        private void Find(string Search)
+        private void Find(object s)
         {
             PatientCatalog PatientCatalog = new PatientCatalog();
-            ObservableCollection<Patient> _ReturnedList = new ObservableCollection<Patient>();
-            foreach (Patient _patient in PatientCatalog.Patients)
+            Patients = new ObservableCollection<Patient>();
+            Patients.Clear();
+            foreach (var _patient in PatientCatalog.Patients)
             {
-                if (_patient.Name == Search || _patient.LastName == Search)
+                if (Search == "")
                 {
-                    Patients.Clear();
                     Patients.Add(_patient);
                 }
                 else
                 {
-                    Patients = PatientCatalog.Patients;
+                    if(_patient.Cpr == Search)
+                    {
+                        Patients.Add(_patient);
+                        
+                    }
                 }
-
-
             }
+
+
+            
         }
      
         
@@ -82,7 +96,7 @@ namespace WaldenHospitalConsumer.ViewModel
             DoShowNewsView = new RelayCommand(ShowListOfPatient);
             DoShowRegistrationPage = new RelayCommand(ShowRegistrationPage);
             //Searching
-            DoSearching = new RelayCommand(Searching);
+            DoSearching = new RelayCommand(Find);
             DoShowPatientInfo = new RelayCommand(ShowPatientInfo);
           
         }
@@ -116,6 +130,9 @@ namespace WaldenHospitalConsumer.ViewModel
 
         public void ShowPatientInfo(object s)
         {
+            _selectedPatient = new Patient();
+            SelectedPatient = new Patient();
+            CurrentEntities.CurrentState.SelectedPatient = SelectedPatient;
             Type type = typeof(PatientInfoView);
             FrameNavigation.ActivateFrameNavigation(type);
         }
