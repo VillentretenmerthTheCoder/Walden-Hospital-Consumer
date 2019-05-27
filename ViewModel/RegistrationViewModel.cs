@@ -14,11 +14,6 @@ namespace WaldenHospitalConsumer.ViewModel
    public class RegistrationViewModel
     {
      
-       
-
-
-
-        public PatientCatalog PatientCatalog {get;set;}
         public Patient Patient { get; set; }
 
 
@@ -33,13 +28,24 @@ namespace WaldenHospitalConsumer.ViewModel
         }
 
 
+        public void IsCheckedMale(object s)
+        {
+            Patient.Gender = 1;
+        }
+
+        public void IsCheckedFemale(object s)
+        {
+            Patient.Gender = 0;
+        }
+
+
         public RegistrationViewModel()
         {
             DoLogOut = new RelayCommand(LogOut);
             DoShowListOfPatients = new RelayCommand(ShowListOfPatient);
             DoShowNewsView = new RelayCommand(ShowNewsView);
-            //DoIsCheckedMale = new RelayCommand(IsCheckedMale);
-            //DoIsCheckedFemale = new RelayCommand(IsCheckedFemale);
+            DoIsCheckedMale = new RelayCommand(IsCheckedMale);
+            DoIsCheckedFemale = new RelayCommand(IsCheckedFemale);
             DoRegister = new RelayCommand(Register);
             Patient = new Patient();
             //Patient = CurrentState.CurrentPatient;

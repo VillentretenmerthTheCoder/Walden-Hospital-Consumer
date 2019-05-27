@@ -38,12 +38,10 @@
             <Button Command ="{Binding DoShowRegistrationPage}" Grid.Column="1"  Content="Registration" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
 
             <Image Margin="20,10,10,10" Grid.Column="2" Height="24" Source="../Assets/icons8-news-24.png" Stretch="Fill" Width="24" RenderTransformOrigin="0.492,0.475"/>
-            <Button Command ="{Binding DoShowListOfPatients}" Grid.Column="3" Content="News"  FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto" HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
+            <Button Command ="{Binding DoShowListOfPatients}" Grid.Column="3" Content="Patient List"  FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto" HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
 
-            <TextBlock Margin="10" Grid.Column="5" Text="[Name] is Logged in" FontSize="20" HorizontalAlignment="Right" Width="Auto" Height="Auto"  FontFamily="Rockwell Condensed" />
-
-            <Image  Margin="20,10,5,10" Grid.Column="6" Source="../Assets/icons8-undo-24.png" Width="24" />
-            <Button Command="{Binding DoLogOut}" Margin="10" Grid.Column="7" Content="Log out" FontSize="20" FontWeight="Black" Background="GreenYellow" Width="Auto" Height="Auto"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Rockwell Condensed" />
+            <Image  Margin="661,11,95,9" Grid.Column="4" Source="../Assets/icons8-undo-24.png" Width="24" />
+            <Button Command="{Binding DoLogOut}" Margin="715,0,0,0" Grid.Column="4" Content="Log out" FontSize="20" FontWeight="Black" Background="GreenYellow" Width="Auto" Height="Auto" FontFamily="Rockwell Condensed" Grid.ColumnSpan="4" />
         </Grid>
 
         <StackPanel Grid.Row="1">
@@ -85,7 +83,7 @@
                                 <Border Background="LightGray" Height="100" Width="100">
                                     <TextBlock Text="{Binding Description}" FontSize="12" Foreground="Green"/>
                                 </Border>
-                               
+
                             </StackPanel>
 
                         </Grid>

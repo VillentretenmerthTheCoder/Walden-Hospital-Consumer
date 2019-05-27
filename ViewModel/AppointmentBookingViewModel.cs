@@ -10,10 +10,17 @@ using WaldenHospitalConsumer.Model.Catalog;
 
 namespace WaldenHospitalConsumer.ViewModel
 {
-    class AppointmentBookingViewModel
+    class AppointmentBookingViewModel: NotificationClass
     {
-        
-        public Appointment Appointment { get; set; }
+        private Appointment _appointment;
+
+        public Appointment Appointment
+        {
+            get { return _appointment; }
+            set { _appointment = value;
+                OnPropertyChanged(nameof(Appointment));
+            }
+        }
 
 
         public void Booking(object s)
@@ -21,6 +28,8 @@ namespace WaldenHospitalConsumer.ViewModel
             AppointmentCatalog AppointmentCatalog = new AppointmentCatalog();
             AppointmentCatalog.GetData(Appointment);
             AppointmentCatalog.Post();
+            Type type = typeof(NewsView);
+            FrameNavigation.ActivateFrameNavigation(type);
         }
 
 
@@ -30,11 +39,10 @@ namespace WaldenHospitalConsumer.ViewModel
             DoLogOut = new RelayCommand(LogOut);
             DoShowListOfPatients = new RelayCommand(ShowListOfPatient);
             DoShowNewsView = new RelayCommand(ShowNewsView);
-            //DoIsCheckedMale = new RelayCommand(IsCheckedMale);
-            //DoIsCheckedFemale = new RelayCommand(IsCheckedFemale);
+           
             DoBooking = new RelayCommand(Booking);
             Appointment = new Appointment();
-            //Patient = CurrentState.CurrentPatient;
+           
 
         }
 

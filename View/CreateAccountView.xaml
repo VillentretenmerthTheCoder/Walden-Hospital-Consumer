@@ -1,0 +1,88 @@
+﻿<Page
+    x:Class="WaldenHospitalConsumer.View.CreateAccountView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WaldenHospitalConsumer.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:WaldenHospitalConsumer.ViewModel"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.DataContext>
+            <ViewModel:CreateNewUserViewModel/>
+        </Grid.DataContext>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="AntiqueWhite">
+
+
+        </StackPanel>
+        <Grid Grid.Row="0" Background="AntiqueWhite">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="780"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Command="{Binding DoLogOut}" Margin="64,20,0,0" Grid.Column="4" Content="Back to Login Screen" FontSize="20" FontWeight="Black" Background="GreenYellow" Width="Auto" Height="Auto"  VerticalAlignment="Top" FontFamily="Rockwell Condensed" />
+        </Grid>
+        <StackPanel Grid.Row="1">
+            <TextBlock FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Register a new User" FontFamily="Rockwell Condensed" />
+            <Grid Margin="5,0,5,0" HorizontalAlignment="Stretch" Height="674" VerticalAlignment="Stretch" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" MinHeight="124"  />
+                    <RowDefinition Height="Auto" MinHeight="148" />
+                    <RowDefinition Height="Auto" MinHeight="182.4" />
+                    <RowDefinition Height="Auto" MinHeight="292" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="145.2" />
+                    <ColumnDefinition Width="Auto" MinWidth="385.2"/>
+                    <ColumnDefinition Width="Auto" MinWidth="229.2" />
+                    <ColumnDefinition Width="Auto" MinWidth="240" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" HorizontalAlignment="Center" Text="First Name" FontSize="20"  Width="95" Height="Auto" Margin="0,10,0,10" />
+                <TextBox Text="{Binding User.Name, Mode=TwoWay}" Grid.Column="1" Grid.Row="0"  FontSize="17" Margin="9.8,10,10.4,62" HorizontalAlignment="Stretch"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Text="Last Name" FontSize="20"  Width="93" Height="Auto" Margin="0,10,0,10" />
+                <TextBox Text="{Binding User.Surname, Mode=TwoWay}" Margin="0,10,0,62" Grid.Column="3" Grid.Row="0" FontSize="17" Width="470" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+                <Grid  Grid.Row="2" Grid.ColumnSpan="2" Margin="145,35,0.4,0.4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel/>
+                    <StackPanel Grid.Column="1" Grid.Row="0"/>
+                </Grid>
+
+                <TextBlock Grid.Column="2" HorizontalAlignment="Center" Text="CPR" Margin="0,10,0,111" FontSize="20" Width="54" Grid.Row="1" VerticalAlignment="Stretch"/>
+                <TextBox Text="{Binding User.Cpr, Mode=TwoWay}" Grid.Column="3" Grid.Row="1" Margin="0,10,0,62" HorizontalAlignment="Center" VerticalAlignment="Top" Width="610" FontSize="17" Height="74" />
+                <Grid Grid.ColumnSpan="4" Margin="-10,140,-120.001,268.667" Grid.Row="2" Grid.RowSpan="2">
+                    <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                </Grid>
+                <Button Command="{Binding DoRegister}" Content="Register" FontSize="40" BorderBrush="Black" BorderThickness="2" Background="GreenYellow" Width="169" Grid.ColumnSpan="2" Grid.Column="2" Margin="63.334,19,0,0" Grid.Row="2" VerticalAlignment="Top" />
+                <TextBlock HorizontalAlignment="Left" Text="Password" Margin="145,0,0,112" FontSize="20" Width="99" Grid.Row="1" Grid.ColumnSpan="2"/>
+                <TextBox Text="{Binding User.Password, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" Margin="99.667,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="275" FontSize="17" Height="47" />
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

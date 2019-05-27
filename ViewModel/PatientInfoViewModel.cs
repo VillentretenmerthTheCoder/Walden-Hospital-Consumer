@@ -24,11 +24,16 @@ namespace WaldenHospitalConsumer.ViewModel
             }
         }
 
+
+
+
+
+
         public RelayCommand ShowBookingView { get; set; }
 
         public void ShowAppointmentBookingView(object s)
         {
-            Type type = typeof(AppointmentBookingView);
+            Type type = typeof(AppointmentBookingView);  
             FrameNavigation.ActivateFrameNavigation(type);
         }
 

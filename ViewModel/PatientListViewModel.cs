@@ -48,17 +48,12 @@ namespace WaldenHospitalConsumer.ViewModel
             set
             {
                 _selectedPatient = value;
+                CurrentEntities.CurrentState.SelectedPatient = SelectedPatient;
                 OnPropertyChanged(nameof(SelectedPatient));
             }
         }
-        
 
-        
         public RelayCommand DoSearching { get; set; }
-
-
-
-
         private void Find(object s)
         {
             PatientCatalog PatientCatalog = new PatientCatalog();
@@ -79,15 +74,8 @@ namespace WaldenHospitalConsumer.ViewModel
                     }
                 }
             }
-
-
-            
         }
      
-        
-        
-        
-        
         //Constructor
         public PatientListViewModel()
         {
@@ -100,10 +88,7 @@ namespace WaldenHospitalConsumer.ViewModel
             DoShowPatientInfo = new RelayCommand(ShowPatientInfo);
           
         }
-
-
-       
-        
+    
         //RelayCommands
         public RelayCommand DoLogOut { get; set; }
         public RelayCommand DoShowNewsView { get; set; }
@@ -130,11 +115,8 @@ namespace WaldenHospitalConsumer.ViewModel
 
         public void ShowPatientInfo(object s)
         {
-            _selectedPatient = new Patient();
-            SelectedPatient = new Patient();
-            CurrentEntities.CurrentState.SelectedPatient = SelectedPatient;
-            Type type = typeof(PatientInfoView);
-            FrameNavigation.ActivateFrameNavigation(type);
+         Type type = typeof(PatientInfoView);
+          FrameNavigation.ActivateFrameNavigation(type);
         }
     }
 }

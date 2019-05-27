@@ -34,16 +34,39 @@ namespace WaldenHospitalConsumer.ViewModel
 
 
         public RelayCommand LoginCommand { get; set; }
-
+        public RelayCommand DoShowCreateAccount { get; set; }
         
 
         //Constructor
         public LoginViewModel()
         {
             LoginCommand = new RelayCommand(Login);
+            DoShowCreateAccount = new RelayCommand(ShowCreateAccount);
         }
-       //was supposed to be async but duuno where to put await xD
-       
+        //was supposed to be async but duuno where to put await xD
+
+
+        public void ShowCreateAccount(object s)
+        {
+            Type type = typeof(CreateAccountView);
+            FrameNavigation.ActivateFrameNavigation(type);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public async void Login(object s)
         {
             try

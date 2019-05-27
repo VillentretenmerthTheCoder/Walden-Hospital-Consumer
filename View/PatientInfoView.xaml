@@ -23,7 +23,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="AntiqueWhite">
+        <Grid Grid.Row="0" Background="AntiqueWhite" Margin="0,0,-55,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -32,16 +32,21 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="4" Source="../Assets/icons8-undo-24.png" Width="24" />
-            <Button Margin="0,0,0,0" Grid.Column="7" Content="Back to List" Command="{Binding DoShowPatientInfo}" FontSize="20" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Rockwell Condensed" />
+            <Image Grid.Column="3" Source="../Assets/icons8-undo-24.png" Width="24" RenderTransformOrigin="0.625,0.553" HorizontalAlignment="Right" Margin="0,-3,198,3" />
+            <Button Margin="0,7,59,0" Grid.Column="3" Content="Back to List" Command="{Binding }" FontSize="20" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  VerticalAlignment="Top" HorizontalAlignment="Right" FontFamily="Rockwell Condensed" />
 
         </Grid>
 
         <Button  Width="Auto" Height="Auto" Grid.Row="2" Content="Appointment" VerticalAlignment="Top" Command="{Binding ShowBookingView}" Margin="608,219.667,0,0"/>
-        <TextBox Text="{Binding Patient.Cpr, Mode=TwoWay}" HorizontalAlignment="Left" Margin="222,45.667,0,0" Grid.Row="2" VerticalAlignment="Top" Height="51" Width="175"/>
-        <TextBox HorizontalAlignment="Left" Margin="397,45.667,0,0" Grid.Row="2" Text="{Binding Patient.Name, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
-        <TextBox HorizontalAlignment="Left" Margin="572,45.667,0,0" Grid.Row="2" Text="{Binding Patient.LastName, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
-        <TextBox HorizontalAlignment="Left" Margin="747,45.667,0,0" Grid.Row="2" Text="{Binding Patient.BirthTime, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
-        <TextBox HorizontalAlignment="Left" Margin="923,45.667,0,0" Grid.Row="2" Text="{Binding Patient.Gender, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
+        <TextBlock Text="CPR" HorizontalAlignment="Left" Margin="222,78,0,0" Grid.Row="2" VerticalAlignment="Top" Height="auto" Width="175"/>
+        <TextBlock HorizontalAlignment="Left" Margin="397,78,0,0" Grid.Row="2" Text="First Name" VerticalAlignment="Top" Height="Auto" Width="175"/>
+        <TextBlock HorizontalAlignment="Left" Margin="572,78,0,0" Grid.Row="2" Text="Last Name" VerticalAlignment="Top" Height="Auto" Width="175"/>
+        <TextBlock HorizontalAlignment="Left" Margin="747,79,0,0" Grid.Row="2" Text="Birth Date" VerticalAlignment="Top" Height="Auto" Width="175"/>
+        <TextBlock HorizontalAlignment="Left" Margin="922,78,0,0" Grid.Row="2" Text="Gender" VerticalAlignment="Top" Height="Auto" Width="176"/>
+        <TextBox Text="{Binding Patient.Cpr, Mode=TwoWay}" HorizontalAlignment="Left" Margin="222,97,0,0" Grid.Row="2" VerticalAlignment="Top" Height="51" Width="175"/>
+        <TextBox HorizontalAlignment="Left" Margin="397,97,0,0" Grid.Row="2" Text="{Binding Patient.Name, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
+        <TextBox HorizontalAlignment="Left" Margin="572,97,0,0" Grid.Row="2" Text="{Binding Patient.LastName, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
+        <TextBox HorizontalAlignment="Left" Margin="747,97,0,0" Grid.Row="2" Text="{Binding Patient.BirthTime, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
+        <TextBox HorizontalAlignment="Left" Margin="922,97,0,0" Grid.Row="2" Text="{Binding Patient.Gender, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="177"/>
     </Grid>
 </Page>

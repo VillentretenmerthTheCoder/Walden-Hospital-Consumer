@@ -14,7 +14,7 @@ using Windows.Web.Http.Headers;
 
 namespace WaldenHospitalConsumer.Model.Catalog
 {
-    public class AppointmentCatalog: IRequestHttpHandler<Patient>
+    public class AppointmentCatalog: IRequestHttpHandler<Appointment>
     {
        
         
@@ -72,9 +72,10 @@ namespace WaldenHospitalConsumer.Model.Catalog
 
             Appointment Appointment12 = new Appointment
             {
-                Cpr = Appointment.Cpr,
+                Cpr = CurrentEntities.CurrentState.SelectedPatient.Cpr,
                 Description = Appointment.Description,
-                AppointmentDate = Appointment.AppointmentDate
+                AppointmentDate = Appointment.AppointmentDate,
+                AppointmentTime = Appointment.AppointmentTime
 
 
                 };
@@ -102,9 +103,9 @@ namespace WaldenHospitalConsumer.Model.Catalog
                     if (response.IsSuccessStatusCode)
                     {
                         string jsonFormat = await response.Content.ReadAsStringAsync();
-                        var newAppointment = JsonConvert.DeserializeObject<Patient>(jsonFormat);
-                        string appointment = $"Cpr:{newAppointment.Cpr}, Name:{newAppointment.Name}, Last Name:{newAppointment.LastName}, Gender:{newAppointment.Gender}, BirthTime:{newAppointment.BirthTime}";
-                        var messageDialog = new MessageDialog("Congratulations New Patient has been added correctly." + appointment);
+                        var newAppointment = JsonConvert.DeserializeObject<Appointment>(jsonFormat);
+                        string appointment = $"Cpr:{newAppointment.Cpr}, Name:{newAppointment.Cpr}, Last Name:{newAppointment.Description}, Gender:{newAppointment.AppointmentDate}, BirthTime:{newAppointment.AppointmentTime}";
+                        var messageDialog = new MessageDialog("Congratulations New Appointment has been added correctly." + appointment);
                         await messageDialog.ShowAsync();
                     }
                     else

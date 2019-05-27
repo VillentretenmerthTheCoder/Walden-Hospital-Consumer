@@ -44,16 +44,22 @@
                              FontSize="32" Width="400"
                              Background="AntiqueWhite" />
             </StackPanel>
-            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="10,50,10,10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,50,10,10" Width="395">
                 <Button x:Name="Login" 
                         Command="{Binding LoginCommand}"
                         Content="Login" 
                         FontSize="25" 
                         Background="LightGreen" 
                         BorderBrush="Black" 
-                        HorizontalAlignment="Center" 
-                        VerticalAlignment="Center"
-                        Margin="5,5,5,5" />
+                        HorizontalAlignment="Center"
+                        Margin="5,5,5,5" RenderTransformOrigin="0.459,0.442" />
+                <Button x:Name="CreateAccount" 
+                        Command="{Binding DoShowCreateAccount}"
+                        Content="Create Account" 
+                        FontSize="25" 
+                        Background="LightGreen" 
+                        BorderBrush="Black"
+                        Margin="5,5,5,5" RenderTransformOrigin="0.459,0.442" Width="191" />
             </StackPanel>
         </StackPanel>
 

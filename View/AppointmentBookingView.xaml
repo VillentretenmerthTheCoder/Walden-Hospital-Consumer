@@ -33,15 +33,13 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Image  Margin="10" Grid.Column="0" Source="../Assets/icons8-news-24.png" Width="24" />
-            <Button Command ="{Binding DoShowNewsView}" Grid.Column="1"  Content="News" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
+            <Button Command ="{Binding DoShowNewsView}" Grid.Column="1"  Content="Appointments List" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
 
             <Image Margin="20,10,10,10" Grid.Column="2" Height="24" Source="../Assets/icons8-search-24.png" Stretch="Fill" Width="24" RenderTransformOrigin="0.492,0.475"/>
             <Button  Command ="{Binding DoShowListOfPatients}" Grid.Column="3" Content="List Of Patients"  FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto" HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
 
-            <TextBlock Margin="10" Grid.Column="5" Text="[Name] is Logged in" FontSize="20" HorizontalAlignment="Right" Width="Auto" Height="Auto"  FontFamily="Rockwell Condensed" />
-
-            <Image  Margin="20,10,5,10" Grid.Column="6" Source="../Assets/icons8-undo-24.png" Width="24" />
-            <Button Command="{Binding DoLogOut}" Margin="10" Grid.Column="7" Content="Log out" FontSize="20" FontWeight="Black" Background="GreenYellow" Width="Auto" Height="Auto"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Rockwell Condensed" />
+            <Image  Margin="647.333,11,98.667,9" Grid.Column="4" Source="../Assets/icons8-undo-24.png" Width="24" />
+            <Button Command="{Binding DoLogOut}" Margin="706.333,5,0,0" Grid.Column="4" Content="Log out" FontSize="20" FontWeight="Black" Background="GreenYellow" Width="Auto" Height="Auto" FontFamily="Rockwell Condensed" VerticalAlignment="Top" Grid.ColumnSpan="4" />
         </Grid>
         <StackPanel Grid.Row="1">
             <TextBlock FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Create an Appointment" FontFamily="Rockwell Condensed" />
@@ -69,8 +67,6 @@
             </Grid>
             <Grid>
                 <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
-
-                <Button Height="Auto" Width="Auto" HorizontalAlignment="Right" Content="Help" FontSize="25" BorderBrush="Black" BorderThickness="1" Background="GreenYellow" Margin="0,0,10,0"/>
             </Grid>
         </StackPanel>
     </Grid>
