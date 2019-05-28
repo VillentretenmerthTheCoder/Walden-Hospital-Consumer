@@ -4,32 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WaldenHospitalConsumer.Utilities;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WaldenHospitalConsumer.Model
 {
     public class User: NotificationClass
     {
 
-        private string _cpr;
-        public string Cpr
-        {
-            get { return _cpr; }
-            set { _cpr = value;
-                OnPropertyChanged(nameof(Cpr)); 
-            }
-        }
+        [Key]
+        [StringLength(10)]
+        public string AdminCpr { get; set; }
 
-        
+        [Required]
+        [StringLength(10)]
         public string Name { get; set; }
 
-       
+        [Required]
+        [StringLength(10)]
         public string Surname { get; set; }
 
-       
+        [Required]
+        [StringLength(10)]
         public string Password { get; set; }
-
-        public virtual Appointment Appointment { get; set; }
-
-        public virtual Patient Patient { get; set; }
     }
 }

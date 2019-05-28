@@ -21,6 +21,8 @@ namespace WaldenHospitalConsumer.ViewModel
             UserCatalog UserCatalog = new UserCatalog();
             UserCatalog.GetData(User);
             UserCatalog.Post();
+            Type type = typeof(LoginView);
+            FrameNavigation.ActivateFrameNavigation(type);
         }
 
 

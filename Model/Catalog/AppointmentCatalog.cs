@@ -18,7 +18,7 @@ namespace WaldenHospitalConsumer.Model.Catalog
     {
        
         
-            private const string Uri = "http://localhost:54174/api/appointments";
+            private const string Uri = "http://localhost:63560/api/appointments";
 
 
             public ObservableCollection<Appointment> Appointments { get; set; }
@@ -104,7 +104,7 @@ namespace WaldenHospitalConsumer.Model.Catalog
                     {
                         string jsonFormat = await response.Content.ReadAsStringAsync();
                         var newAppointment = JsonConvert.DeserializeObject<Appointment>(jsonFormat);
-                        string appointment = $"Cpr:{newAppointment.Cpr}, Name:{newAppointment.Cpr}, Last Name:{newAppointment.Description}, Gender:{newAppointment.AppointmentDate}, BirthTime:{newAppointment.AppointmentTime}";
+                        string appointment = $"Cpr:{newAppointment.Cpr}, Description:{newAppointment.Description}, AppointmentDate:{newAppointment.AppointmentDate}, AppointmentTime:{newAppointment.AppointmentTime}";
                         var messageDialog = new MessageDialog("Congratulations New Appointment has been added correctly." + appointment);
                         await messageDialog.ShowAsync();
                     }

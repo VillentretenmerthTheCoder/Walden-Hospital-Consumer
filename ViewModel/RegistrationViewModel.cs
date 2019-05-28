@@ -25,17 +25,19 @@ namespace WaldenHospitalConsumer.ViewModel
             PatientCatalog PatientCatalog = new PatientCatalog();
             PatientCatalog.GetData(Patient);
             PatientCatalog.Post();
+            Type type = typeof(PatientListView);
+            FrameNavigation.ActivateFrameNavigation(type);
         }
 
 
         public void IsCheckedMale(object s)
         {
-            Patient.Gender = 1;
+            Patient.Gender = "Male";
         }
 
         public void IsCheckedFemale(object s)
         {
-            Patient.Gender = 0;
+            Patient.Gender = "Female";
         }
 
 

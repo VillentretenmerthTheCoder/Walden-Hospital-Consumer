@@ -22,7 +22,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" Background="AntiqueWhite">
-            
+
 
         </StackPanel>
         <Grid Grid.Row="0" Background="AntiqueWhite">
@@ -37,11 +37,11 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Image  Margin="10" Grid.Column="0" Source="../Assets/icons8-news-24.png" Width="24" />
-            <Button Command="{Binding DoShowNewsView}" Grid.Column="1"  Content="News" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
+            <Button Command="{Binding DoShowNewsView}" Grid.Column="1"  Content="Appointments List&#xD;&#xA;" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="37"  HorizontalAlignment="Center" FontSize="20" FontFamily="Rockwell Condensed" />
 
             <Image Margin="20,10,10,10" Grid.Column="2" Height="24" Source="../Assets/icons8-search-24.png" Stretch="Fill" Width="24" RenderTransformOrigin="0.492,0.475"/>
             <Button Command="{Binding DoShowListOfPatients}" Grid.Column="3" Content="List Of Patients"  FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto" HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
-            <Button Command="{Binding DoLogOut}" Margin="10" Grid.Column="7" Content="Log out" FontSize="20" FontWeight="Black" Background="GreenYellow" Width="Auto" Height="Auto"  VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Rockwell Condensed" />
+            <Button Command="{Binding DoLogOut}" Margin="440.333,0,0,0" Grid.Column="4" Content="Log out" FontSize="20" FontWeight="Black" Background="GreenYellow" Width="Auto" Height="Auto" FontFamily="Rockwell Condensed" />
         </Grid>
         <StackPanel Grid.Row="1">
             <TextBlock FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Register New Patient" FontFamily="Rockwell Condensed" />

@@ -26,5 +26,6 @@ namespace WaldenHospitalConsumer.View
         {
             this.InitializeComponent();
         }
+
     }
 }

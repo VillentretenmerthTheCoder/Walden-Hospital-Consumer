@@ -66,6 +66,21 @@
                 <Button Command="{Binding DoSearching}" Content="Search" Height="55" Width="213"/>
                 <TextBox Text="{Binding Search, Mode=TwoWay}" Width="530" Height="69" Margin="250,0,0,0" />
             </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Border Background="LightGray" Height="Auto" Width="100">
+                    <TextBox Text="Cpr" FontSize="12" Foreground="Green" Margin="10,0,0,0"/>
+                </Border>
+                <Border Background="LightGray" Height="Auto" Width="120">
+                    <TextBox Text="Appointment Date"  FontSize="12" Foreground="Green"/>
+                </Border>
+                <Border Background="LightGray" Height="Auto" Width="120">
+                    <TextBox Text="Appointment Time" FontSize="12" Foreground="Green"/>
+                </Border>
+                <Border Background="LightGray" Height="Auto" Width="400">
+                    <TextBox Text="Description" FontSize="12" Foreground="Green"/>
+                </Border>
+              
+            </StackPanel>
             <ListView ItemsSource="{Binding Appointments}" Height="402">
                 <ListView.ItemTemplate>
                     <DataTemplate>

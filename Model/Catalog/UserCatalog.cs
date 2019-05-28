@@ -17,7 +17,7 @@ namespace WaldenHospitalConsumer.Model.Catalog
 {
    public class UserCatalog: IRequestHttpHandler<User>
     {
-        private const string Uri = "http://localhost:54174/api/users";
+        private const string Uri = "http://localhost:63560/api/users";
 
         public ObservableCollection<User> Users { get; set; }
         public User User { get; set; }
@@ -68,7 +68,7 @@ namespace WaldenHospitalConsumer.Model.Catalog
             {
                  Name = User.Name,
                  Surname = User.Surname,
-                 Cpr = User.Cpr,
+                 AdminCpr = User.AdminCpr,
                  Password = User.Password
             };
 
@@ -96,7 +96,7 @@ namespace WaldenHospitalConsumer.Model.Catalog
                 {
                     string jsonFormat = await response.Content.ReadAsStringAsync();
                     var newUser = JsonConvert.DeserializeObject<User>(jsonFormat);
-                    string user = $"Cpr:{newUser.Cpr}, Name:{newUser.Name}, Last Name:{newUser.Surname}, Password:{newUser.Password}";
+                    string user = $"Cpr:{newUser.AdminCpr}, Name:{newUser.Name}, Last Name:{newUser.Surname}, Password:{newUser.Password}";
                     var messageDialog = new MessageDialog("Congratulations New User has been added correctly." + user);
                     await messageDialog.ShowAsync();
                 }

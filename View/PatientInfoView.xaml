@@ -32,12 +32,12 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Image Grid.Column="3" Source="../Assets/icons8-undo-24.png" Width="24" RenderTransformOrigin="0.625,0.553" HorizontalAlignment="Right" Margin="0,-3,198,3" />
-            <Button Margin="0,7,59,0" Grid.Column="3" Content="Back to List" Command="{Binding }" FontSize="20" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  VerticalAlignment="Top" HorizontalAlignment="Right" FontFamily="Rockwell Condensed" />
+            <Image Grid.Column="3" Source="../Assets/icons8-undo-24.png" Width="24" RenderTransformOrigin="0.625,0.553" HorizontalAlignment="Right" Margin="0,4,274,-4" />
+            <Button Margin="0,6,135,0" Grid.Column="3" Content="Back to List" Command="{Binding DoShowPatientListView }" FontSize="20" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  VerticalAlignment="Top" HorizontalAlignment="Right" FontFamily="Rockwell Condensed" />
 
         </Grid>
 
-        <Button  Width="Auto" Height="Auto" Grid.Row="2" Content="Appointment" VerticalAlignment="Top" Command="{Binding ShowBookingView}" Margin="608,219.667,0,0"/>
+        <Button Command="{Binding ShowBookingView}" Width="Auto" Height="Auto" Grid.Row="2" Content="Appointment" VerticalAlignment="Top"  Margin="608,219.667,0,0"/>
         <TextBlock Text="CPR" HorizontalAlignment="Left" Margin="222,78,0,0" Grid.Row="2" VerticalAlignment="Top" Height="auto" Width="175"/>
         <TextBlock HorizontalAlignment="Left" Margin="397,78,0,0" Grid.Row="2" Text="First Name" VerticalAlignment="Top" Height="Auto" Width="175"/>
         <TextBlock HorizontalAlignment="Left" Margin="572,78,0,0" Grid.Row="2" Text="Last Name" VerticalAlignment="Top" Height="Auto" Width="175"/>

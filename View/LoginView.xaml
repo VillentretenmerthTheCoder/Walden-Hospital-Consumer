@@ -28,7 +28,7 @@
                     <TextBlock HorizontalAlignment="Left" Text="Personal ID" FontSize="20" Width="355"/>
                 </StackPanel>
                 <TextBox TextAlignment="Justify" 
-                         Text="{Binding Cpr, Mode=TwoWay}"
+                         Text="{Binding AdminCpr, Mode=TwoWay}"
                          FontSize="32" 
                          Width="400" 
                          Background="AntiqueWhite"  />

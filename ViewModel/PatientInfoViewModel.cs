@@ -28,7 +28,7 @@ namespace WaldenHospitalConsumer.ViewModel
 
 
 
-
+        public RelayCommand DoShowPatientListView { get; set; }
         public RelayCommand ShowBookingView { get; set; }
 
         public void ShowAppointmentBookingView(object s)
@@ -41,6 +41,13 @@ namespace WaldenHospitalConsumer.ViewModel
         {
             Patient = new Patient();
             ShowBookingView = new RelayCommand(ShowAppointmentBookingView);
+            DoShowPatientListView = new RelayCommand(ShowPatientListView);
+        }
+
+        public void ShowPatientListView(object s)
+        {
+            Type type = typeof(PatientListView);
+            FrameNavigation.ActivateFrameNavigation(type);
         }
 
     }

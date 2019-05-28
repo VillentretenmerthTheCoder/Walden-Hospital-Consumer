@@ -4,53 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WaldenHospitalConsumer.Utilities;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace WaldenHospitalConsumer.Model
 {
     public class Patient : NotificationClass
     {
-        private string _cpr;
-        private int _gender;
-        private DateTime? _birthtime;
-        private string _name;
-        private string _lastname;
-
-
-        public string Cpr
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Patient()
         {
-            get { return _cpr; }
-            set { _cpr = value;
-                OnPropertyChanged(nameof(Cpr));
-            }
-        }
-        
-        public int Gender
-        {
-            get { return _gender; }
-            set { _gender = value;
-                OnPropertyChanged(nameof(Gender));
-            }
+            Appointments = new HashSet<Appointment>();
         }
 
-        public DateTime? BirthTime
-        {
-            get { return _birthtime; }
-            set { _birthtime = value;
-                OnPropertyChanged(nameof(BirthTime));
-            }
-        }
+        [Key]
+        [StringLength(10)]
+        public string Cpr { get; set; }
 
-        public string Name { get { return _name; } set { _name = value;
-                OnPropertyChanged(nameof(_name));
-            } }
-        
-        public string LastName
-        {
-            get { return _lastname; }
-            set { _lastname = value;
-                OnPropertyChanged(nameof(LastName));
-            }
-        }
+        [Required]
+        [StringLength(10)]
+        public string Gender { get; set; }
 
-        
+        [Column(TypeName = "date")]
+        public DateTime BirthTime { get; set; }
+
+        [Required]
+        [StringLength(20)]
+        public string Name { get; set; }
+
+        [Required]
+        [StringLength(20)]
+        public string LastName { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Appointment> Appointments { get; set; }
+
+
     }
 }

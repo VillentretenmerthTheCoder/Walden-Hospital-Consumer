@@ -68,15 +68,19 @@
 
             <StackPanel Orientation="Horizontal">
                 <Border Background="LightGray" Height="Auto" Width="100">
-                    <TextBox Text="Cpr" FontSize="12" Foreground="Green" Margin="20,0,0,0"/>
+                    <TextBox Text="Cpr" FontSize="12" Foreground="Green" Margin="10,0,0,0"/>
                 </Border>
-
-                <TextBox Text="First Name"  FontSize="12" Foreground="Green"/>
-                <Border Background="LightGray" Height="Auto" Width="150">
+                <Border Background="LightGray" Height="Auto" Width="120">
+                    <TextBox Text="First Name"  FontSize="12" Foreground="Green"/>
+                </Border>
+                <Border Background="LightGray" Height="Auto" Width="120">
                     <TextBox Text="LastName" FontSize="12" Foreground="Green"/>
                 </Border>
-                <Border Background="LightGray" Height="Auto" Width="100">
+                <Border Background="LightGray" Height="Auto" Width="150">
                     <TextBox Text="Birthdate" FontSize="12" Foreground="Green"/>
+                </Border>
+                <Border Background="LightGray" Height="Auto" Width="120">
+                    <TextBox Text="Gender" FontSize="12" Foreground="Green"/>
                 </Border>
             </StackPanel>
             <ListView ItemsSource="{Binding Patients}" Height="402" SelectedItem="{Binding SelectedPatient , Mode=TwoWay}">
@@ -94,7 +98,7 @@
                                 <Border Background="LightGray" Height="100" Width="150">
                                     <TextBlock Text="{Binding LastName}" FontSize="12" Foreground="Green"/>
                                 </Border>
-                                <Border Background="LightGray" Height="100" Width="100">
+                                <Border Background="LightGray" Height="100" Width="150">
                                     <TextBlock Text="{Binding BirthTime}" FontSize="12" Foreground="Green"/>
                                 </Border>
                                 <Border Background="LightGray" Height="100" Width="100">

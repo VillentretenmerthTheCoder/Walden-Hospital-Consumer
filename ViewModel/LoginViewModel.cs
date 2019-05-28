@@ -9,7 +9,7 @@ namespace WaldenHospitalConsumer.ViewModel
 {
     public class LoginViewModel: NotificationClass
     {
-        private string _cpr;
+        private string _adminCpr;
         private string _password;
         private bool _allowLogin = false;
 
@@ -21,10 +21,10 @@ namespace WaldenHospitalConsumer.ViewModel
             get { return _allowLogin; }
             set { _allowLogin = value; }
         }
-        public string Cpr
+        public string AdminCpr
         {
-            get { return _cpr; }
-            set { _cpr = value; }
+            get { return _adminCpr; }
+            set { _adminCpr = value; }
         }
         public string Password
         {
@@ -79,26 +79,21 @@ namespace WaldenHospitalConsumer.ViewModel
                     foreach(var user in UserCatalog.Users)
                     {
                      
-                        if(user.Cpr.Trim() == Cpr)
-                        {
-                            if(user.Password.Trim() == Password)
-                            {
-                               
-                                
-                                  Type typeProfile = typeof(NewsView);
-                                  FrameNavigation.ActivateFrameNavigation(typeProfile);
+                        if(user.AdminCpr.Trim() == AdminCpr && user.Password.Trim() == Password)
+                        {    
+                                Type typeProfile = typeof(NewsView);
+                                FrameNavigation.ActivateFrameNavigation(typeProfile);
                                 break;
-                            } 
+                            
+                        }
                             else
                             {
-                                {
-                                    var dialog = new MessageDialog("Wrong email or password");
-                                    await dialog.ShowAsync();
-                                    break;
-                                }
+                            
+                                var dialog = new MessageDialog("Wrong email or password!");
+                                await dialog.ShowAsync();
+                                break;
                             }
-                        }
-                       
+                        
                     }
                     
                    
