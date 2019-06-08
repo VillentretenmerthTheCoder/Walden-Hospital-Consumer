@@ -4,52 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WaldenHospitalConsumer.Utilities;
-using WaldenHospitalConsumer.Model;
 using WaldenHospitalConsumer.View;
+using WaldenHospitalConsumer.Model;
 using WaldenHospitalConsumer.Model.Catalog;
+using WaldenHospitalConsumer.CurrentEntities;
 
 namespace WaldenHospitalConsumer.ViewModel
 {
-    class AppointmentBookingViewModel: NotificationClass
+    class AddNewMedicineViewModel
     {
-        private Appointment _appointment;
+        public Medicine Medicine { get; set; }
 
-        public Appointment Appointment
+
+
+
+        public void Register(object s)
         {
-            get { return _appointment; }
-            set { _appointment = value;
-                OnPropertyChanged(nameof(Appointment));
-            }
-        }
-
-
-        public void Booking(object s)
-        {
-            AppointmentCatalog AppointmentCatalog = new AppointmentCatalog();
-            AppointmentCatalog.GetData(Appointment);
-            AppointmentCatalog.Post();
+            MedicineCatalog MedicineCatalog = new MedicineCatalog();
+            MedicineCatalog.GetData(Medicine);
+            MedicineCatalog.Post();
             Type type = typeof(NewsView);
             FrameNavigation.ActivateFrameNavigation(type);
         }
 
-
-
-        public AppointmentBookingViewModel()
+        public AddNewMedicineViewModel()
         {
             DoLogOut = new RelayCommand(LogOut);
             DoShowListOfPatients = new RelayCommand(ShowListOfPatient);
             DoShowNewsView = new RelayCommand(ShowNewsView);
-            DoBooking = new RelayCommand(Booking);
-            Appointment = new Appointment();
-            Appointment.AppointmentDate = new DateTime();
-            Appointment.AppointmentTime = new TimeSpan();
-           
-
+            DoRegister = new RelayCommand(Register);
+            Medicine = new Medicine();
         }
 
-        public RelayCommand DoBooking { get; set; }
-        public RelayCommand DoIsCheckedMale { get; set; }
-        public RelayCommand DoIsCheckedFemale { get; set; }
+        public RelayCommand DoRegister { get; set; }
         public RelayCommand DoLogOut { get; set; }
         public RelayCommand DoShowListOfPatients { get; set; }
         public RelayCommand DoShowNewsView { get; set; }

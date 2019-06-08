@@ -70,26 +70,22 @@ namespace WaldenHospitalConsumer.ViewModel
         }
 
 
-
-
-
-
-
-
-
-
         public NewsViewModel()
         {
             DoLogOut = new RelayCommand(LogOut);
             DoShowListOfPatients = new RelayCommand(ShowListOfPatient);
             DoShowRegistrationPage = new RelayCommand(ShowRegistrationPage);
             DoSearching = new RelayCommand(Find);
+            DoShowRegisterNewDoctor = new RelayCommand(ShowRegisterNewDoctor);
+            DoShowAddNewMedicine = new RelayCommand(ShowAddNewMedicine);
 
         }
         //RelayCommands
         public RelayCommand DoLogOut { get; set; }
        public  RelayCommand DoShowListOfPatients { get; set; }
        public  RelayCommand DoShowRegistrationPage { get; set; }
+        public RelayCommand DoShowRegisterNewDoctor { get; set; }
+        public RelayCommand DoShowAddNewMedicine { get; set; }
 
         public void LogOut(object s) 
         {
@@ -108,5 +104,18 @@ namespace WaldenHospitalConsumer.ViewModel
             Type type = typeof(RegistrationView);
             FrameNavigation.ActivateFrameNavigation(type);
         }
+
+        public void ShowRegisterNewDoctor(object s)
+        {
+            Type type = typeof(RegisterNewDoctor);
+            FrameNavigation.ActivateFrameNavigation(type);
+        }
+
+        public void ShowAddNewMedicine(object s)
+        {
+            Type type = typeof(AddNewMedicineView);
+            FrameNavigation.ActivateFrameNavigation(type);
+        }
+
     }
 }

@@ -12,22 +12,24 @@ using WaldenHospitalConsumer.Utilities;
 using WaldenHospitalConsumer.ViewModel;
 using Windows.Web.Http.Headers;
 
-
 namespace WaldenHospitalConsumer.Model.Catalog
 {
-   public class UserCatalog: IRequestHttpHandler<User>
+    class MedicineCatalog: IRequestHttpHandler<Medicine>
     {
-        private const string Uri = "http://localhost:54174/api/users";
+        private const string Uri = "http://localhost:54174/api/medicines";
 
-        public ObservableCollection<User> Users { get; set; }
-        public User User { get; set; }
-       
 
-        public UserCatalog()
+        public ObservableCollection<Medicine> Medicines { get; set; }
+        public Medicine Medicine { get; set; }
+
+
+
+        public MedicineCatalog()
         {
-            User = new User();
-            Users = new ObservableCollection<User>();
+            Medicine = new Medicine();
+            Medicines = new ObservableCollection<Medicine>();
             FetchAllData();
+
         }
 
 
@@ -49,27 +51,28 @@ namespace WaldenHospitalConsumer.Model.Catalog
                     // convert Json into Objects
                     if (response != null)
                     {
-                        Users = JsonConvert.DeserializeObject<ObservableCollection<User>>(response);
+                        Medicines = JsonConvert.DeserializeObject<ObservableCollection<Medicine>>(response);
                         //call on property change interface.
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     var messageDialog = new MessageDialog(ex.Message);
                     await messageDialog.ShowAsync();
-                }                
+                }
             }
         }
 
 
-           public async void Post()
+
+        public async void Post()
         {
-            User User12 = new User
+
+            Medicine Medicine12 = new Medicine
             {
-                 Name = User.Name,
-                 Surname = User.Surname,
-                 AdminCpr = User.AdminCpr,
-                 Password = User.Password
+                Name = Medicine.Name,
+                Price = Medicine.Price,
+                Availability = Medicine.Availability
             };
 
 
@@ -78,7 +81,7 @@ namespace WaldenHospitalConsumer.Model.Catalog
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new HttpMediaTypeWithQualityHeaderValue("application/json"));
                 //We need to convert new object firstly into json format and then into json string form.
-                var jsonStr = JsonConvert.SerializeObject(User12);
+                var jsonStr = JsonConvert.SerializeObject(Medicine12);
                 var content = new HttpStringContent(jsonStr, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json");
                 HttpResponseMessage response = null;
                 Task task = Task.Run(async () =>
@@ -89,15 +92,15 @@ namespace WaldenHospitalConsumer.Model.Catalog
                 task.Wait();
                 if (response.StatusCode == HttpStatusCode.Conflict)
                 {
-                    throw new Exception("User already exist!");
+                    throw new Exception("Medicine already exist!");
                 }
                 //id response successed.
                 if (response.IsSuccessStatusCode)
                 {
                     string jsonFormat = await response.Content.ReadAsStringAsync();
-                    var newUser = JsonConvert.DeserializeObject<User>(jsonFormat);
-                    string user = $"Cpr:{newUser.AdminCpr}, Name:{newUser.Name}, Last Name:{newUser.Surname}, Password:{newUser.Password}";
-                    var messageDialog = new MessageDialog("Congratulations New User has been added correctly." + user);
+                    var newMedicine = JsonConvert.DeserializeObject<Medicine>(jsonFormat);
+                    string medicine = $"Name:{newMedicine.Name}, Price:{newMedicine.Price}, Availability:{newMedicine.Availability}";
+                    var messageDialog = new MessageDialog("Congratulations New Medicine has been added correctly." + medicine);
                     await messageDialog.ShowAsync();
                 }
                 else
@@ -114,11 +117,11 @@ namespace WaldenHospitalConsumer.Model.Catalog
 
 
 
-           }
+        }
 
-        public void GetData(User pat)
+        public void GetData(Medicine med)
         {
-            User = pat;
+            Medicine = med;
         }
     }
 }

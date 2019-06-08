@@ -123,21 +123,30 @@
     <Compile Include="Handler\IRequestHttpHandler.cs" />
     <Compile Include="Model\Appointment.cs" />
     <Compile Include="Model\Catalog\AppointmentCatalog.cs" />
+    <Compile Include="Model\Catalog\DoctorCatalog.cs" />
+    <Compile Include="Model\Catalog\MedicineCatalog.cs" />
     <Compile Include="Model\Catalog\PatientCatalog.cs" />
     <Compile Include="Model\Catalog\UserCatalog.cs" />
+    <Compile Include="Model\Doctor.cs" />
+    <Compile Include="Model\Medicine.cs" />
     <Compile Include="Model\Patient.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\FrameNavigation.cs" />
     <Compile Include="Utilities\NotificationClass.cs" />
     <Compile Include="Utilities\RelayCommand.cs" />
+    <Compile Include="ViewModel\AddNewMedicineViewModel.cs" />
     <Compile Include="ViewModel\AppointmentBookingViewModel.cs" />
     <Compile Include="ViewModel\CreateNewUserViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\NewsViewModel.cs" />
     <Compile Include="ViewModel\PatientInfoViewModel.cs" />
     <Compile Include="ViewModel\PatientListViewModel.cs" />
+    <Compile Include="ViewModel\RegisterDoctorViewModel.cs" />
     <Compile Include="ViewModel\RegistrationViewModel.cs" />
+    <Compile Include="View\AddNewMedicineView.xaml.cs">
+      <DependentUpon>AddNewMedicineView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AppointmentBookingView.xaml.cs">
       <DependentUpon>AppointmentBookingView.xaml</DependentUpon>
     </Compile>
@@ -158,6 +167,9 @@
     </Compile>
     <Compile Include="View\PatientListView.xaml.cs">
       <DependentUpon>PatientListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RegisterNewDoctor.xaml.cs">
+      <DependentUpon>RegisterNewDoctor.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RegistrationView.xaml.cs">
       <DependentUpon>RegistrationView.xaml</DependentUpon>
@@ -200,6 +212,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\AddNewMedicineView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AppointmentBookingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -225,6 +241,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PatientListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RegisterNewDoctor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

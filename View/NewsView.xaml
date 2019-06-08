@@ -23,26 +23,6 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Row="0" Background="AntiqueWhite">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="780"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Image  Margin="10" Grid.Column="0" Source="../Assets/icons8-edit-24.png" Width="24" />
-            <Button Command ="{Binding DoShowRegistrationPage}" Grid.Column="1"  Content="Registration" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
-
-            <Image Margin="20,10,10,10" Grid.Column="2" Height="24" Source="../Assets/icons8-news-24.png" Stretch="Fill" Width="24" RenderTransformOrigin="0.492,0.475"/>
-            <Button Command ="{Binding DoShowListOfPatients}" Grid.Column="3" Content="Patient List"  FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto" HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
-
-            <Image  Margin="661,11,95,9" Grid.Column="4" Source="../Assets/icons8-undo-24.png" Width="24" />
-            <Button Command="{Binding DoLogOut}" Margin="715,0,0,0" Grid.Column="4" Content="Log out" FontSize="20" FontWeight="Black" Background="GreenYellow" Width="Auto" Height="Auto" FontFamily="Rockwell Condensed" Grid.ColumnSpan="4" />
-        </Grid>
 
         <StackPanel Grid.Row="1">
 
@@ -73,13 +53,13 @@
                 <Border Background="LightGray" Height="Auto" Width="120">
                     <TextBox Text="Appointment Date"  FontSize="12" Foreground="Green"/>
                 </Border>
-                <Border Background="LightGray" Height="Auto" Width="120">
+                <Border Background="LightGray" Height="Auto" Width="200">
                     <TextBox Text="Appointment Time" FontSize="12" Foreground="Green"/>
                 </Border>
                 <Border Background="LightGray" Height="Auto" Width="400">
-                    <TextBox Text="Description" FontSize="12" Foreground="Green"/>
+                    <TextBox Text="Description" FontSize="12" Foreground="Green" Width="400"/>
                 </Border>
-              
+
             </StackPanel>
             <ListView ItemsSource="{Binding Appointments}" Height="402">
                 <ListView.ItemTemplate>
@@ -95,7 +75,7 @@
                                 <Border Background="LightGray" Height="100" Width="150">
                                     <TextBlock Text="{Binding AppointmentTime}" FontSize="12" Foreground="Green"/>
                                 </Border>
-                                <Border Background="LightGray" Height="100" Width="100">
+                                <Border Background="LightGray" Height="100" Width="400">
                                     <TextBlock Text="{Binding Description}" FontSize="12" Foreground="Green"/>
                                 </Border>
 
@@ -107,5 +87,28 @@
             </ListView>
 
         </StackPanel>
+        <Grid Grid.Row="0" Background="AntiqueWhite">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="780"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Image  Margin="10,11,777.333,9" Grid.Column="4" Source="../Assets/icons8-edit-24.png" Width="24" />
+            <Button Command ="{Binding DoShowRegistrationPage}" Grid.Column="1"  Content="Registration" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
+
+            <Image Margin="20,10,10,10" Grid.Column="2" Height="24" Source="../Assets/icons8-news-24.png" Stretch="Fill" Width="24" RenderTransformOrigin="0.492,0.475"/>
+            <Button Command ="{Binding DoShowListOfPatients}" Grid.Column="3" Content="Patient List"  FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto" HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
+
+            <Image  Margin="661,11,95,9" Grid.Column="4" Source="../Assets/icons8-undo-24.png" Width="24" />
+            <Button Command="{Binding DoLogOut}" Margin="715,0,0,0" Grid.Column="4" Content="Log out" FontSize="20" FontWeight="Black" Background="GreenYellow" Width="Auto" Height="Auto" FontFamily="Rockwell Condensed" Grid.ColumnSpan="4" />
+            <Button Command ="{Binding DoShowRegisterNewDoctor}" Grid.Column="4" Content="New Doctor&#xD;&#xA;"  FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="37" FontSize="20" FontFamily="Rockwell Condensed" Margin="46,0,0,0" />
+            <Button Command ="{Binding DoShowAddNewMedicine}" Grid.Column="4" Content="New Medicine&#xA;"  FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="37" FontSize="20" FontFamily="Rockwell Condensed" Margin="221,0,0,0" />
+
+        </Grid>
     </Grid>
 </Page>

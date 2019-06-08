@@ -18,7 +18,7 @@ namespace WaldenHospitalConsumer.Model.Catalog
     {
        
         
-            private const string Uri = "http://localhost:63560/api/appointments";
+            private const string Uri = "http://localhost:54174/api/appointments";
 
 
             public ObservableCollection<Appointment> Appointments { get; set; }
