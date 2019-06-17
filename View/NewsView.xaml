@@ -53,11 +53,14 @@
                 <Border Background="LightGray" Height="Auto" Width="120">
                     <TextBox Text="Appointment Date"  FontSize="12" Foreground="Green"/>
                 </Border>
-                <Border Background="LightGray" Height="Auto" Width="200">
+                <Border Background="LightGray" Height="Auto" Width="150">
                     <TextBox Text="Appointment Time" FontSize="12" Foreground="Green"/>
                 </Border>
                 <Border Background="LightGray" Height="Auto" Width="400">
                     <TextBox Text="Description" FontSize="12" Foreground="Green" Width="400"/>
+                </Border>
+                <Border Background="LightGray" Height="Auto" Width="150">
+                    <TextBox Text="Doctor" FontSize="12" Foreground="Green" Width="400"/>
                 </Border>
 
             </StackPanel>
@@ -70,13 +73,16 @@
                                     <TextBlock  Text="{Binding Cpr}" FontSize="12" Foreground="Green"/>
                                 </Border>
                                 <Border Background="LightGray" Height="100" Width="150">
-                                    <TextBlock Text="{Binding AppointmentDate}" FontSize="12" Foreground="Green"/>
+                                    <TextBlock Text="{Binding AppointmentDate.Date}" FontSize="12" Foreground="Green"/>
                                 </Border>
-                                <Border Background="LightGray" Height="100" Width="150">
-                                    <TextBlock Text="{Binding AppointmentTime}" FontSize="12" Foreground="Green"/>
+                                <Border Background="LightGray" Height="100" Width="120">
+                                    <TextBlock Text="{Binding AppointmentTime.TimeOfDay}" FontSize="12" Foreground="Green"/>
                                 </Border>
                                 <Border Background="LightGray" Height="100" Width="400">
                                     <TextBlock Text="{Binding Description}" FontSize="12" Foreground="Green"/>
+                                </Border>
+                                <Border Background="LightGray" Height="100" Width="140">
+                                    <TextBlock Text="{Binding  Doctor}" FontSize="12" Foreground="Green"/>
                                 </Border>
 
                             </StackPanel>
@@ -108,6 +114,7 @@
             <Button Command="{Binding DoLogOut}" Margin="715,0,0,0" Grid.Column="4" Content="Log out" FontSize="20" FontWeight="Black" Background="GreenYellow" Width="Auto" Height="Auto" FontFamily="Rockwell Condensed" Grid.ColumnSpan="4" />
             <Button Command ="{Binding DoShowRegisterNewDoctor}" Grid.Column="4" Content="New Doctor&#xD;&#xA;"  FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="37" FontSize="20" FontFamily="Rockwell Condensed" Margin="46,0,0,0" />
             <Button Command ="{Binding DoShowAddNewMedicine}" Grid.Column="4" Content="New Medicine&#xA;"  FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="37" FontSize="20" FontFamily="Rockwell Condensed" Margin="221,0,0,0" />
+            <Button Command ="{Binding DoShowReceipt}" Grid.Column="4" Content="Receipt&#xD;&#xA;&#xA;"  FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="37" FontSize="20" FontFamily="Rockwell Condensed" Margin="425,0,0,0" />
 
         </Grid>
     </Grid>

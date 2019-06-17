@@ -10,7 +10,6 @@ namespace WaldenHospitalConsumer.Model
 {
     class Medicine
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]
@@ -19,6 +18,9 @@ namespace WaldenHospitalConsumer.Model
 
         public int Price { get; set; }
 
-        public int Availability { get; set; }
+        public override string ToString()
+        {
+            return $"{Name} Price:{Price} dkk";
+        }
     }
 }

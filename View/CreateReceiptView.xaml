@@ -1,0 +1,70 @@
+﻿<Page
+    x:Class="WaldenHospitalConsumer.View.CreateReceiptView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WaldenHospitalConsumer.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:ViewModel="using:WaldenHospitalConsumer.ViewModel"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.DataContext>
+            <ViewModel:CreateReceiptViewModel/>
+        </Grid.DataContext>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="0"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Background="AntiqueWhite">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="770"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Image  Margin="10" Grid.Column="0" Source="../Assets/icons8-news-24.png" Width="24" />
+            <Button Command ="{Binding DoBack}" Grid.Column="1"  Content="Appointments List" FontWeight="ExtraBlack" Background="GreenYellow" Width="Auto" Height="Auto"  HorizontalAlignment="Left" Margin="5" FontSize="20" FontFamily="Rockwell Condensed" />
+
+            <Image Margin="20,10,10,10" Grid.Column="2" Height="24" Source="../Assets/icons8-search-24.png" Stretch="Fill" Width="24" RenderTransformOrigin="0.492,0.475"/>
+        </Grid>
+        <StackPanel Margin="0,47,-350,0" Grid.RowSpan="2">
+            <TextBlock FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Create a Receipt" FontFamily="Rockwell Condensed" />
+            <Grid Margin="5,0,5,0" Height="574" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" MinHeight="124"  />
+                    <RowDefinition Height="Auto" MinHeight="148" />
+                    <RowDefinition Height="Auto" MinHeight="148" />
+                    <RowDefinition Height="Auto" MinHeight="148"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="145.2" />
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock HorizontalAlignment="Center" Text="Doctor" FontSize="20"  Width="112" Height="Auto" Margin="0,33,0,10" />
+
+                <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="Medcine" FontSize="20"  Width="112" Height="Auto" Margin="0,45,0,10" />
+                <Button Command="{Binding DoCreateReceipt}" Content="Create" FontSize="40" BorderBrush="Black" BorderThickness="2" Background="GreenYellow" Margin="548.667,50,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.Column="1" />
+                <TextBlock Grid.Row="2" HorizontalAlignment="Center" FontSize="20" Margin="0,63,0,18" Width="175" Text="Medical procedure"/>
+                <ComboBox SelectedItem="{Binding SelectedDoctor, Mode=TwoWay}" ItemsSource="{Binding Doctors, Mode=TwoWay}" Margin="9.667,33,0,0" Width="325" Height="48" PlaceholderText="Choose a doctor" Grid.Column="1"/>
+                <ComboBox SelectedItem="{Binding SelectedMedicine, Mode=TwoWay}" ItemsSource="{Binding Medicines, Mode=TwoWay}" Margin="145,45,0,0" Width="325" Height="48" PlaceholderText="Choose a medicine" Grid.ColumnSpan="2" Grid.Row="1"/>
+                <TextBox HorizontalAlignment="Left" Margin="9.667,60,0,0" Grid.Row="2" Text="{Binding ServiceDescription , Mode=TwoWay}" VerticalAlignment="Top" Height="46" Width="453" Grid.Column="1"/>
+                <TextBox HorizontalAlignment="Left" Margin="467.667,60,0,0" Grid.Row="2" Text="{Binding ServicePrice, Mode=TwoWay}" VerticalAlignment="Top" Height="46" Width="59" Grid.Column="1"/>
+
+            </Grid>
+            <Grid>
+                <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

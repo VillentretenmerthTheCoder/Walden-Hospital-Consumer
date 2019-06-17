@@ -7,12 +7,15 @@ using WaldenHospitalConsumer.Utilities;
 using WaldenHospitalConsumer.Model;
 using WaldenHospitalConsumer.View;
 using WaldenHospitalConsumer.Model.Catalog;
+using System.Collections.ObjectModel;
 
 namespace WaldenHospitalConsumer.ViewModel
 {
     class AppointmentBookingViewModel: NotificationClass
     {
         private Appointment _appointment;
+        private ObservableCollection<Doctor> _doctor;
+      
 
         public Appointment Appointment
         {
@@ -23,6 +26,34 @@ namespace WaldenHospitalConsumer.ViewModel
         }
 
 
+        private Doctor _selectedDoctor;
+        public Doctor SelectedDoctor
+        {
+            get { return _selectedDoctor;}
+            set
+            {
+                _selectedDoctor = value;
+                CurrentEntities.CurrentState.SelectedDoctor = SelectedDoctor;
+                OnPropertyChanged(nameof(SelectedDoctor));
+            }
+        }
+
+
+
+
+        public ObservableCollection<Doctor> Doctors
+        {
+            get
+            {
+                DoctorCatalog DoctorCatalog = new DoctorCatalog();
+                _doctor = DoctorCatalog.Doctors;
+                return _doctor;
+            }
+            set
+            {
+                _doctor = value;
+            }
+        }
         public void Booking(object s)
         {
             AppointmentCatalog AppointmentCatalog = new AppointmentCatalog();
@@ -41,10 +72,6 @@ namespace WaldenHospitalConsumer.ViewModel
             DoShowNewsView = new RelayCommand(ShowNewsView);
             DoBooking = new RelayCommand(Booking);
             Appointment = new Appointment();
-            Appointment.AppointmentDate = new DateTime();
-            Appointment.AppointmentTime = new TimeSpan();
-           
-
         }
 
         public RelayCommand DoBooking { get; set; }

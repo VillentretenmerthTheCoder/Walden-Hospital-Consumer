@@ -71,8 +71,8 @@ namespace WaldenHospitalConsumer.Model.Catalog
             Medicine Medicine12 = new Medicine
             {
                 Name = Medicine.Name,
-                Price = Medicine.Price,
-                Availability = Medicine.Availability
+                Price = Medicine.Price
+                
             };
 
 
@@ -99,7 +99,7 @@ namespace WaldenHospitalConsumer.Model.Catalog
                 {
                     string jsonFormat = await response.Content.ReadAsStringAsync();
                     var newMedicine = JsonConvert.DeserializeObject<Medicine>(jsonFormat);
-                    string medicine = $"Name:{newMedicine.Name}, Price:{newMedicine.Price}, Availability:{newMedicine.Availability}";
+                    string medicine = $"Name:{newMedicine.Name}, Price:{newMedicine.Price}";
                     var messageDialog = new MessageDialog("Congratulations New Medicine has been added correctly." + medicine);
                     await messageDialog.ShowAsync();
                 }

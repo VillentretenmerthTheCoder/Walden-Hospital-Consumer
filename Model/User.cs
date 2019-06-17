@@ -17,15 +17,15 @@ namespace WaldenHospitalConsumer.Model
         public string AdminCpr { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(20)]
         public string Name { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(20)]
         public string Surname { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(20)]
         public string Password { get; set; }
     }
 }

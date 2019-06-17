@@ -67,14 +67,14 @@ namespace WaldenHospitalConsumer.Model.Catalog
 
         public async void Post()
         {
-            
+
             Patient Patient12 = new Patient
             {
                 Cpr = Patient.Cpr,
                 Name = Patient.Name,
                 LastName = Patient.LastName,
                 Gender = Patient.Gender,
-                BirthTime = Patient.BirthTime
+                BirthTime = DateTimeOffsetAndTimeSetToDateTime(Patient.BirthTime)
             };
 
             
@@ -120,6 +120,14 @@ namespace WaldenHospitalConsumer.Model.Catalog
            
 
         }
+
+        public static DateTime DateTimeOffsetAndTimeSetToDateTime(DateTimeOffset date)
+        {
+            return new DateTime(date.Year, date.Month, date.Day);
+        }
+
+
+
 
         public void GetData(Patient pat)
         {

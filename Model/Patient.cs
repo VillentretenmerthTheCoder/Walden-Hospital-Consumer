@@ -26,7 +26,15 @@ namespace WaldenHospitalConsumer.Model
         public string Gender { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime BirthTime { get; set; }
+        private DateTimeOffset _birthtime;
+
+        public DateTimeOffset BirthTime
+        {
+            get { return _birthtime; }
+            set { _birthtime = value;
+                OnPropertyChanged(nameof(BirthTime));
+            }
+        }
 
         [Required]
         [StringLength(20)]

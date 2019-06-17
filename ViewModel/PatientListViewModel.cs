@@ -54,6 +54,7 @@ namespace WaldenHospitalConsumer.ViewModel
         }
 
         public RelayCommand DoSearching { get; set; }
+
         private void Find(object s)
         {
             PatientCatalog PatientCatalog = new PatientCatalog();

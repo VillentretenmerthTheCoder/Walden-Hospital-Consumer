@@ -16,7 +16,7 @@ namespace WaldenHospitalConsumer.ViewModel
         private Patient _patient;
         public Patient Patient
         {
-            get { return _patient; }
+            get {return _patient;}
             set
             {
                 _patient = CurrentState.SelectedPatient;
@@ -28,8 +28,8 @@ namespace WaldenHospitalConsumer.ViewModel
 
 
 
-        public RelayCommand DoShowPatientListView { get; set; }
-        public RelayCommand ShowBookingView { get; set; }
+        public RelayCommand DoShowPatientListView {get; set;}
+        public RelayCommand ShowBookingView {get; set;}
 
         public void ShowAppointmentBookingView(object s)
         {

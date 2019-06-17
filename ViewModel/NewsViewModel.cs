@@ -78,14 +78,16 @@ namespace WaldenHospitalConsumer.ViewModel
             DoSearching = new RelayCommand(Find);
             DoShowRegisterNewDoctor = new RelayCommand(ShowRegisterNewDoctor);
             DoShowAddNewMedicine = new RelayCommand(ShowAddNewMedicine);
+            DoShowReceipt = new RelayCommand(ShowReceipt);
 
         }
         //RelayCommands
         public RelayCommand DoLogOut { get; set; }
-       public  RelayCommand DoShowListOfPatients { get; set; }
-       public  RelayCommand DoShowRegistrationPage { get; set; }
+        public  RelayCommand DoShowListOfPatients { get; set; }
+        public  RelayCommand DoShowRegistrationPage { get; set; }
         public RelayCommand DoShowRegisterNewDoctor { get; set; }
         public RelayCommand DoShowAddNewMedicine { get; set; }
+        public RelayCommand DoShowReceipt { get; set; }
 
         public void LogOut(object s) 
         {
@@ -117,5 +119,10 @@ namespace WaldenHospitalConsumer.ViewModel
             FrameNavigation.ActivateFrameNavigation(type);
         }
 
+        public void ShowReceipt(object s)
+        {
+            Type type = typeof(CreateReceiptView);
+            FrameNavigation.ActivateFrameNavigation(type);
+        }
     }
 }

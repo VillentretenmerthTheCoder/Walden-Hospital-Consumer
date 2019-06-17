@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WaldenHospitalConsumer.Utilities;
 
 namespace WaldenHospitalConsumer.Model
 {
-  public class Appointment
+  public class Appointment: NotificationClass
     {
 
         [Required]
@@ -20,11 +21,36 @@ namespace WaldenHospitalConsumer.Model
         public string Description { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime AppointmentDate { get; set; }
+        private DateTimeOffset _appointmentDate;
 
-        public TimeSpan AppointmentTime { get; set; }
+        public DateTimeOffset AppointmentDate
+        {
+            get { return _appointmentDate; }
+            set
+            {
+                _appointmentDate = value;
+                OnPropertyChanged(nameof(AppointmentDate));
+            }
+        }
+
+        private DateTimeOffset _appointmentTime;
+
+        public DateTimeOffset AppointmentTime
+        {
+            get { return _appointmentTime; }
+            set
+            {
+                _appointmentTime = value;
+                OnPropertyChanged(nameof(AppointmentTime));
+            }
+        }
+
 
         public int AppointmentID { get; set; }
+
+        [Required]
+        [StringLength(20)]
+        public string Doctor { get; set; }
 
         public virtual Patient Patient { get; set; }
     }

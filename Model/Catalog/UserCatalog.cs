@@ -89,7 +89,8 @@ namespace WaldenHospitalConsumer.Model.Catalog
                 task.Wait();
                 if (response.StatusCode == HttpStatusCode.Conflict)
                 {
-                    throw new Exception("User already exist!");
+                     var dialog = new MessageDialog("User already exist!");
+                    await dialog.ShowAsync();
                 }
                 //id response successed.
                 if (response.IsSuccessStatusCode)

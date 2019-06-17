@@ -52,21 +52,6 @@ namespace WaldenHospitalConsumer.ViewModel
             FrameNavigation.ActivateFrameNavigation(type);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public async void Login(object s)
         {
             try
@@ -78,26 +63,25 @@ namespace WaldenHospitalConsumer.ViewModel
 
                     foreach(var user in UserCatalog.Users)
                     {
-                     
-                        if(user.AdminCpr.Trim() == AdminCpr && user.Password.Trim() == Password)
+                        if(user.AdminCpr.Trim() == AdminCpr.Trim() && user.Password.Trim() == Password.Trim())
                         {    
                                 Type typeProfile = typeof(NewsView);
                                 FrameNavigation.ActivateFrameNavigation(typeProfile);
+                                AllowLogin = true;
                                 break;
                             
                         }
-                            else
-                            {
-                            
-                                var dialog = new MessageDialog("Wrong email or password!");
-                                await dialog.ShowAsync();
-                                break;
-                            }
+                    }
+                     
+                    if(AllowLogin == false)
+                    {
+
+                        var dialog = new MessageDialog("Wrong email or password!");
+                        await dialog.ShowAsync();
                         
                     }
-                    
-                   
-                   
+
+
                 }        
 
 

@@ -46,7 +46,7 @@
         <TextBox Text="{Binding Patient.Cpr, Mode=TwoWay}" HorizontalAlignment="Left" Margin="222,97,0,0" Grid.Row="2" VerticalAlignment="Top" Height="51" Width="175"/>
         <TextBox HorizontalAlignment="Left" Margin="397,97,0,0" Grid.Row="2" Text="{Binding Patient.Name, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
         <TextBox HorizontalAlignment="Left" Margin="572,97,0,0" Grid.Row="2" Text="{Binding Patient.LastName, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
-        <TextBox HorizontalAlignment="Left" Margin="747,97,0,0" Grid.Row="2" Text="{Binding Patient.BirthTime, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
+        <TextBox HorizontalAlignment="Left" Margin="747,97,0,0" Grid.Row="2" Text="{Binding Patient.BirthTime.Date, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="175"/>
         <TextBox HorizontalAlignment="Left" Margin="922,97,0,0" Grid.Row="2" Text="{Binding Patient.Gender, Mode=TwoWay}" VerticalAlignment="Top" Height="51" Width="177"/>
     </Grid>
 </Page>

@@ -10,7 +10,6 @@ namespace WaldenHospitalConsumer.Model
 {
     class Doctor
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]
@@ -26,7 +25,13 @@ namespace WaldenHospitalConsumer.Model
         public string Cpr { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(20)]
         public string Profession { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name} {LastName} Profession:{Profession}";
+        }
+
     }
 }

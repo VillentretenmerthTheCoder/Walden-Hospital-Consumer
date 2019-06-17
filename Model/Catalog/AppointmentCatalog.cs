@@ -65,7 +65,7 @@ namespace WaldenHospitalConsumer.Model.Catalog
                 }
             }
 
-
+       
 
             public async void Post()
             {
@@ -74,9 +74,9 @@ namespace WaldenHospitalConsumer.Model.Catalog
             {
                 Cpr = CurrentEntities.CurrentState.SelectedPatient.Cpr,
                 Description = Appointment.Description,
-                AppointmentDate = Appointment.AppointmentDate,
-                AppointmentTime = Appointment.AppointmentTime
-
+                AppointmentDate = DateTimeOffsetAndTimeSetToDateTime(Appointment.AppointmentDate),
+               // AppointmentTime = DateTimeOffsetAndTimeSetToTime(Appointment.AppointmentTime),
+                Doctor = CurrentEntities.CurrentState.SelectedDoctor.Name + CurrentEntities.CurrentState.SelectedDoctor.LastName
 
                 };
 
@@ -104,7 +104,7 @@ namespace WaldenHospitalConsumer.Model.Catalog
                     {
                         string jsonFormat = await response.Content.ReadAsStringAsync();
                         var newAppointment = JsonConvert.DeserializeObject<Appointment>(jsonFormat);
-                        string appointment = $"Cpr:{newAppointment.Cpr}, Description:{newAppointment.Description}, AppointmentDate:{newAppointment.AppointmentDate}, AppointmentTime:{newAppointment.AppointmentTime}";
+                        string appointment = $"Cpr:{newAppointment.Cpr}, Description:{newAppointment.Description}, AppointmentDate:{newAppointment.AppointmentDate}, AppointmentTime:{newAppointment.AppointmentTime}, Doctor:{newAppointment.Doctor}";
                         var messageDialog = new MessageDialog("Congratulations New Appointment has been added correctly." + appointment);
                         await messageDialog.ShowAsync();
                     }
@@ -124,7 +124,20 @@ namespace WaldenHospitalConsumer.Model.Catalog
 
             }
 
-            public void GetData(Appointment app)
+        public static DateTime DateTimeOffsetAndTimeSetToDateTime(DateTimeOffset date)
+        {
+            DateTime dt = new DateTime();
+            return new DateTime(date.Year, date.Month, date.Day, dt.Hour, dt.Minute, dt.Minute);
+        }
+
+        //public static DateTime DateTimeOffsetAndTimeSetToTime(DateTimeOffset date)
+        //{
+        //    DateTime dt = new DateTime();
+        //    return new DateTime(date.Year, date.Month, date.Day, date.Hour, date.Minute, date.Minute);
+        //}
+
+
+        public void GetData(Appointment app)
             {
                 Appointment = app;
             }

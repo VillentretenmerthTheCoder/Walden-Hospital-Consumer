@@ -78,8 +78,6 @@
                     <StackPanel Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
                 </Grid>
-                <TextBlock HorizontalAlignment="Left" Text="Availability" Margin="145,0,0,0" FontSize="20" Width="112" Grid.Row="1" Grid.ColumnSpan="2" Height="148" VerticalAlignment="Center" />
-                <TextBox Text="{Binding Medicine.Availability, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="252" FontSize="17" Height="47" Margin="122.667,0,0,0" />
                 <Button Command="{Binding DoRegister}" Content="Register" FontSize="40" BorderBrush="Black" BorderThickness="2" Background="GreenYellow" Width="169" Grid.Column="2" Margin="60.334,82,0,0" Grid.Row="1" VerticalAlignment="Top" />
 
             </Grid>

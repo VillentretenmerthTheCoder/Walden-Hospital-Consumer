@@ -50,7 +50,6 @@ namespace WaldenHospitalConsumer.ViewModel
             DoIsCheckedFemale = new RelayCommand(IsCheckedFemale);
             DoRegister = new RelayCommand(Register);
             Patient = new Patient();
-            Patient.BirthTime = new DateTime();
 
         }
 
